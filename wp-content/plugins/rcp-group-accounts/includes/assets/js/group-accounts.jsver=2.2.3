@@ -1,0 +1,145 @@
+/*global jQuery, document, rcpgaLevelMap*/
+/*jslint newcap: true*/
+jQuery(document).ready(function ($) {
+	'use strict';
+
+	var rcpgaVars     = window.rcpgaVars || {};
+
+	var rcpgaLevelMap = window.rcpgaLevelMap || {};
+
+	var rcpgaPerSeatPricingLevelMap = window.rcpgaPerSeatPricingLevelMap || {};
+
+	var $groupFields  = $('.rcpga-group-fields');
+
+	if (! $groupFields.length) {
+		return;
+	}
+
+	/*
+	 * Update pricing for all Group Accounts per-seat pricing levels to append "Per Seat" to the price.
+	 */
+	Object.keys( rcpgaPerSeatPricingLevelMap ).forEach( function( levelID, index ) {
+		const levelWrap = $( '.rcp_subscription_level_' + levelID );
+
+		if ( ! levelWrap.length ) {
+			return;
+		}
+
+		const priceWrap = levelWrap.find( '.rcp_price' );
+
+		if ( ! priceWrap.length ) {
+			return;
+		}
+
+		priceWrap.html( priceWrap.html() + ' ' + rcpgaVars.per_seat );
+	} );
+
+	var display = $groupFields.css('display');
+
+	// Get selected level, if any
+	var level = $('.rcp_level:checked').val();
+
+	/**
+	 * If there's no selected level, find the first named input.
+	 * This makes it work with [register_form id=xx], or on pages
+	 * where the level is not already pre-selected.
+	 */
+	if (undefined === level || ! level.length) {
+		level = $("input[name='rcp_level']").val();
+	}
+
+	// Adjust group field visibility based on level selected on page load
+	if ( -1 !== rcpgaLevelMap.indexOf(level) ) {
+		$groupFields.css('display', display);
+	} else {
+		$groupFields.css('display', 'none');
+	}
+
+	configurePerSeatPricing( level );
+
+	$( 'input.rcp_level' ).on( 'click', function () {
+		var level = $('.rcp_level:checked').val();
+		$( '#rcpga-group-number-seats' ).val( rcpgaPerSeatPricingLevelMap[ level ].minSeats );
+	});
+
+	// Adjust group field visibility on change events
+	$('input.rcp_level').on( 'change', function () {
+
+		var level = $('.rcp_level:checked').val();
+
+		if ( -1 !== rcpgaLevelMap.indexOf(level) ) {
+			$groupFields.css('display', display);
+		} else {
+			$groupFields.css('display', 'none');
+		}
+
+		checkSeatAllocations( level );
+		configurePerSeatPricing( level );
+	});
+
+	$( '#rcpga-group-number-seats' ).on( 'focusout', function() {
+		var level = $('.rcp_level:checked').val();
+		checkSeatAllocations( level );
+		rcp_validate_registration_state();
+	} );
+
+	/**
+	 * Configure per-seat pricing for the specified membership level ID.
+	 *
+	 * 		- Shows the "Group Seats" input field for relevant levels.
+	 * 		- Sets the `min` and `max` HTML attributes according to the settings.
+	 * 		- Shows the relevant label depending on whether or not there's a specified maximum.
+	 *
+	 * @param {number} levelID
+	 *
+	 * @since 2.2
+	 */
+	function configurePerSeatPricing( levelID ) {
+		const seatCountWrap = $( '#rcpga-group-number-seats-wrap' );
+		const seatCountField = seatCountWrap.find( 'input' );
+
+		if ( rcpgaPerSeatPricingLevelMap.hasOwnProperty( levelID ) ) {
+			const perSeatPrice = rcpgaPerSeatPricingLevelMap[ levelID ].perSeatPrice;
+			const minSeats     = rcpgaPerSeatPricingLevelMap[ levelID ].minSeats;
+			const maxSeats     = rcpgaPerSeatPricingLevelMap[ levelID ].maxSeats;
+
+			seatCountWrap.show();
+			seatCountField.attr( 'min', minSeats );
+
+			seatCountWrap.find( '.rcpga-group-seats-min' ).text( minSeats );
+
+			if ( maxSeats > 0 ) {
+				seatCountField.attr( 'max', maxSeats );
+				seatCountWrap.find( '.rcpga-group-seats-max' ).text( maxSeats );
+				seatCountWrap.find( '.rcpga-group-seats-no-max' ).hide();
+				seatCountWrap.find( '.rcpga-group-seats-has-max' ).show();
+			} else {
+				seatCountField.removeAttr( 'max' );
+				seatCountWrap.find( '.rcpga-group-seats-has-max' ).hide();
+				seatCountWrap.find( '.rcpga-group-seats-no-max' ).show();
+			}
+		} else {
+			seatCountWrap.hide();
+		}
+	}
+
+	/**
+	 * Update the group seats to match the selected levels.
+	 *
+	 * @oaram {number} levelID
+	 */
+	function checkSeatAllocations( levelID )
+	{
+		var rcpgaPerSeatPricingLevelMap = window.rcpgaPerSeatPricingLevelMap || {};
+
+		// Need to check to ensure that we are not attempting to access this data for fixed price groups
+		if ( rcpgaPerSeatPricingLevelMap[ levelID ] != undefined ) {
+			if ( $( '#rcpga-group-number-seats' ).val() > rcpgaPerSeatPricingLevelMap[ levelID ].maxSeats && rcpgaPerSeatPricingLevelMap[ levelID ].maxSeats != 0) {
+				$( '#rcpga-group-number-seats' ).val( rcpgaPerSeatPricingLevelMap[ levelID ].maxSeats );
+			} else if ($( '#rcpga-group-number-seats' ).val() < rcpgaPerSeatPricingLevelMap[ levelID ].minSeats ) {
+				$( '#rcpga-group-number-seats' ).val( rcpgaPerSeatPricingLevelMap[ levelID ].minSeats );
+			}
+		}
+	}
+
+});

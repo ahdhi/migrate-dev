@@ -1,0 +1,196 @@
+google.charts.load('current', {packages: ['corechart', 'bar', 'timeline']});
+google.charts.setOnLoadCallback(drawChart1);
+google.charts.setOnLoadCallback(drawChart2);
+google.charts.setOnLoadCallback(drawChart3);
+google.charts.setOnLoadCallback(drawChart4);
+google.charts.setOnLoadCallback(drawChart5);
+google.charts.setOnLoadCallback(drawChart6);
+google.charts.setOnLoadCallback(drawChart7);
+
+// timeline
+function drawChart1() {
+  var container = document.getElementById('timeline-skilled');
+  var chart = new google.visualization.Timeline(container);
+  var dataTable = new google.visualization.DataTable();
+
+  dataTable.addColumn({ type: 'string', id: 'Role' });
+  dataTable.addColumn({ type: 'string', id: 'Name' });
+  dataTable.addColumn({ type: 'date', id: 'Start' });
+  dataTable.addColumn({ type: 'date', id: 'End' });
+  dataTable.addRows([
+    [ 'Program 2019-20', 'Skilled Migration Program 2019-20', new Date(2019, 6, 1), new Date(2020, 5, 30) ],
+    [ 'Skilled Regional', 'Skilled Work Regional (Subclass 489) closed', new Date(2019, 6, 1), new Date(2019, 10, 15) ],
+    [ 'Skilled Regional', 'Skilled Regional (Subclass 491 & 494) starts', new Date(2019, 10, 16), new Date(2020, 5, 30) ],
+    [ 'Covid-19 Pandemic', 'Covid 19 - Travel ban', new Date(2020, 2, 20), new Date(2020, 5, 30) ]
+  ]);
+
+  var options = {
+    timeline: { groupByRowLabel: true },
+    colors: ['#3366CC', '#DC3912', '#109619' , '#F5B400']
+  };
+
+  chart.draw(dataTable, options);
+}
+
+// total Nominations by State & Territory Governments
+function drawChart2() {
+  var data = google.visualization.arrayToDataTable([
+    ['Visa Subclass', 'Nominations'],
+    ['Skilled Nominated 190', 11499],
+    ['Skilled Work Regional 491', 5739],
+    ['Skilled Regional 489', 3946],
+    ['Business Innovation and Investment 188', 3612],
+    ['Business Talent Visa 132', 793]
+  ]);
+
+  var options = {
+    title: 'State & Territory Nominated',
+    is3D: true,
+    height: 400
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+  chart.draw(data, options);
+}
+
+// invitations Issued on Program year 2019-20
+function drawChart3() {
+  var data = google.visualization.arrayToDataTable([
+    ['', 'Skilled Independent 189', 'Skilled Work Regional 491 (Family)', 'Skilled Regional 489 (Family)'],
+    ['visa subclass', 7720, 1480, 300]
+  ]);
+
+  var options = {
+    theme: 'material',
+    legend: { position: 'top', maxLines: 3},
+    chart: {
+      title: 'Total Invitations issued: 9,500',
+      subtitle: '2019-20 program',
+    },
+    height: 350,
+    width: 500,
+    isStacked: false
+  };
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('total_bar'));
+  chart.draw(data, google.charts.Bar.convertOptions(options));  
+}
+
+// invitations issued by month
+function drawChart4() {
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'Skilled Independent 189', 'Skilled Work Regional 491 (Family)', 'Skilled Regional 489 (Family)'],
+    ['Jul 2019', 1000, 0, 100],
+    ['Aug', 100, 0, 100],
+    ['Sep', 100, 0, 100],
+    ['Oct', 1500, 0, 0],
+    ['Nov', 250, 0, 0],
+    ['Dec', 250, 200, 0],
+    ['Jan 2020', 1000, 300, 0],
+    ['Feb', 1000, 500, 0],
+    ['Mar', 1750, 300, 0],
+    ['Apr', 50, 50, 0],
+    ['May', 550, 100, 0],
+    ['Jun', 170, 30, 0]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Invitations issued by month',
+      subtitle: '2019-20 program',
+    },
+    height: 500,
+    isStacked: true
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('chart_div'));
+  chart.draw(data, google.charts.Bar.convertOptions(options));  
+}
+
+// visa 190
+function drawChart5() {
+  var data = google.visualization.arrayToDataTable([
+    ['State/Territory', 'Allocated quota', 'Actual quota'],
+    ['ACT', 1200, 1200],
+    ['NSW', 3000, 2742],
+    ['NT', 400, 400],
+    ['QLD', 1000, 1000],
+    ['SA', 1250, 1250],
+    ['TAS', 1200, 1117],
+    ['VIC', 2500, 2500],
+    ['WA', 2250, 1290]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Subclass 190',
+      subtitle: '2019-20 program',
+    },
+    height: 500,
+    isStacked: false
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('visa190'));
+  chart.draw(data, google.charts.Bar.convertOptions(options));  
+}
+
+// visa 489 + 491
+function drawChart6() {
+  var data = google.visualization.arrayToDataTable([
+    ['State/Territory', 'Allocated quota', 'Actual quota'],
+    ['ACT',200, 200],
+    ['NSW',2745, 1671],
+    ['NT',600, 536],
+    ['QLD',1250, 1090],
+    ['SA',3750, 3078],
+    ['TAS',1800, 1800],
+    ['VIC',1043, 1043],
+    ['WA',1000, 267]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Subclass 491 & 489',
+      subtitle: '2019-20 program'
+    },
+    height: 500,
+    isStacked: false
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('visa491'));
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
+
+// minimum points
+function drawChart7() {
+  var data = google.visualization.arrayToDataTable([
+    ['Month', 'Skilled Independent 189', 'Skilled Regional 489 / 491 (Family)'],
+    ['Jul 2019', 80, 80],
+    ['Aug', 85, 80],
+    ['Sep', 85, 85],
+    ['Oct', 80, 0],
+    ['Nov', 85, 0],
+    ['Dec', 95, 95],
+    ['Jan 2020', 90, 90],
+    ['Feb', 90, 85],
+    ['Mar', 90, 85],
+    ['Apr', 95, 95],
+    ['May', 85, 70],
+    ['Jun', 85, 70]
+  ]);
+
+  var options = {
+    legend: { position: 'top', maxLines: 3},
+    chart: {
+      title: 'Minimum Points Score',
+      subtitle: '2019-20 program',
+    },
+    height: 500,
+    isStacked: false
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('points_score'));
+  chart.draw(data, google.charts.Bar.convertOptions(options));  
+}
+
+

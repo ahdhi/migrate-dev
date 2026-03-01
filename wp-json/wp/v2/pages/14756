@@ -1,0 +1,651 @@
+<div class="print-only hidden" x-data="{ currentDate: '' }" x-init="currentDate = new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })">
+  <h2>SkillSelect Points Calculator</h2>
+  <h3 class="text-gray-600 mb-10">Indicative score on <span x-text="currentDate"></span></h3>
+</div>
+<div class="container mx-auto">
+  <div x-data="{
+    selected: ['','','','','','','','','','','',''],
+    subclass:'',
+    age:'',
+    english:'',
+    overseaswork:'',
+    auswork:'',
+    qual:'',
+    ausqual:'',
+    regional:'',
+    special:'',
+    acl:'',
+    partner:'',
+    professional:'',
+    reset() {
+      this.selected = ['','','','','','','','','','','',''];
+      this.subclass = '';
+      this.age = '';
+      this.english = '';
+      this.overseaswork = '';
+      this.auswork = '';
+      this.qual = '';
+      this.ausqual = '';
+      this.regional = '';
+      this.special = '';
+      this.acl = '';
+      this.partner = '';
+      this.professional = '';
+    },
+    total() {
+      var workExperience = Number(this.overseaswork) + Number(this.auswork);
+      if (workExperience > 20) {
+        workExperience = 20;
+      }
+
+      var b = Number(this.auswork);
+      return Number(this.subclass) + Number(this.age) + Number(this.english) + workExperience + Number(this.qual) + Number(this.ausqual) + Number(this.regional) + Number(this.special) + Number(this.acl) + Number(this.partner) + Number(this.professional);
+    },
+    ausqual_clkd(){
+      this.ausqual = 0;
+    }
+  }" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+    
+    <div class="md:col-span-1">
+      <div class="sticky top-10">
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('subclass').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': subclass !== '' }">
+          <div>
+            <div class="leading-5 cursor-pointer block text-sm">Visa Subclass<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[1]"></span></div>
+            <div class="py-1 text-xs text-gray-400 print-only hidden">(Subclass 189: 0 points; Subclass 190: 5 points; Subclass 491: 15 points)</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="subclass"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('age').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': age !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Age<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[2]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="age"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('c-english').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': english !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">English Language<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[3]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="english"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('overseaswork').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': overseaswork !== '' }">
+          <div>
+            <div class="leading-5 cursor-pointer block text-sm">Overseas Work Experience<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[4]"></span></div>
+            <div class="py-1 text-xs text-gray-400 print-only hidden">* Subject to Skills Assessment outcome</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="overseaswork"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('auswork').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': auswork !== '' }">
+          <div>
+            <div class="leading-5 cursor-pointer block text-sm">Australian Work Experience<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[5]"></span></div>
+            <div class="py-1 text-xs text-gray-400 print-only hidden">* Subject to Skills Assessment outcome</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="auswork"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('qual').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': qual !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Educational Qualifications<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[6]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="qual"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('ausqual').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': ausqual !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Australian Educational Qualification<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[7]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="ausqual"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="ml-10 cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('ausqual').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': regional !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Designated regional area study<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[8]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="regional"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('special').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': special !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Specialist Educational Qualification<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[9]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="special"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('acl').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': acl !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Accredited Community Language<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[10]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="acl"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('partner').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': partner !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Partner Qualifications<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[11]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="partner"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="cursor-pointer bg-white px-4 py-0.5 mb-1 rounded shadow flex items-center justify-between" x-on:click="document.getElementById('professional').scrollIntoView({ behavior: 'smooth' })" :class="{'border-r-4 border-solid border-blue-800': professional !== '' }">
+          <div>
+            <p class="leading-5 cursor-pointer block text-sm">Professional Year in Australia<span class="ml-2 cursor-pointer text-sm text-gray-400" x-text="selected[12]"></span></p>
+          </div>
+          <div class="flex items-center">
+            <div class="w-8 h-8 bg-gray-200 text-black rounded-full flex items-center justify-center text-md ml-4"><span x-text="professional"></span></div>
+          </div>
+        </div>
+
+        
+        <div class="mt-4 px-4 py-2 text-xl rounded bg-gray-100 text-black flex justify-between items-center" :class="{'bg-green-50 border-2 border-solid border-green-800': total() >= 65 }">
+          <div>
+            <div class="text-2xl font-bold">Indicative Score</div>
+            <div class="text-sm">Pass mark is 65 points</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center" :class="{'bg-green-800': total() >= 65 }">
+              <span class="text-lg font-bold"><span x-text="total()"></span></span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div x-data="{ showdetails: true }" x-show="showdetails">
+          <div class="print-only hidden mt-16 p-4 max-w-4xl mx-auto shadow rounded-lg overflow-hidden">
+            <div class="flex">
+              <div class="w-1/2 p-2 flex items-start">
+                <img src="https://www.anzscosearch.com/wp-content/uploads/2024/05/infosheet.png" class="object-cover">
+              </div>
+              <div class="ml-6 w-1/2">
+                <h2 class="text-xl font-bold mb-2">Anzscosearch</h2>
+                <div class="leading-tight">
+                  <p class="pb-2 text-gray-700">www.anzscosearch.com</p>
+                  <p class="pb-2 text-gray-700"><a href="mailto:info@anzscosearch.com" class="text-blue-500">info@anzscosearch.com</a></p>
+                  <p class="pb-2 text-gray-700"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex mt-4 space-x-2 no-print">
+          <button class="flex items-center bg-blue-900 text-white py-1 px-4 hover:bg-blue-950" x-on:click="reset()">Reset</button>
+                  </div>
+
+        <script>
+          function forcePrint() {
+            document.body.style.display = "none";
+            setTimeout(() => {
+              document.body.style.display = "block";
+              setTimeout(() => {
+                window.print();
+              }, 100);
+            }, 50);
+          }
+        </script>
+        
+        <button class='no-print flex items-center bg-blue-900 text-white mt-2 py-1 px-4 hover:bg-blue-950' x-on:click="window.open('https://www.anzscosearch.com/contact', '_blank')">Need Immigration Assistance?</button>
+      </div>
+    </div>
+
+    
+    <div class="md:col-span-2 space-y-4 no-print">
+
+      
+      <div id="subclass" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Visa Subclass</h1>
+        <div class="text-xl pb-4 text-gray-800">Which visa Subclass are you applying for?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="subclass"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="visa189" class="flex items-center" x-on:click="subclass=0">
+              <div><input x-model="selected[1]" id="visa189" name="visa" type="radio" value="Skilled Independent 189" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <span class="mx-4 block text-base text-black">Skilled Independent visa Subclass 189</span>
+                <span class="mx-4 block text-sm text-gray-400">You must have an occupation on the <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/mltssl/" @click.stop>MLTSSL</a>.</span>
+              </div>
+            </label>
+            <label for="visa190" class="flex items-center" x-on:click="subclass=5">
+              <div><input x-model="selected[1]" id="visa190" name="visa" type="radio" value="Skilled Nominated 190" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <span class="mx-4 block text-base text-black">Skilled Nominated visa Subclass 190</span>
+                <span class="mx-4 block text-sm text-gray-400">Requires nomination by a State or Territory government. You must have an occupation on the <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/mltssl/" @click.stop>MLTSSL</a> or <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/stsol/" @click.stop>STSOL</a>.</span>
+              </div>
+            </label>
+            <label for="visa491" class="flex items-center" x-on:click="subclass=15">
+              <div><input x-model="selected[1]" id="visa491" name="visa" type="radio" value="Skilled Work Regional 491" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <span class="mx-4 block text-base text-black">Skilled Work Regional (Provisional) visa Subclass 491</span>
+                <span class="mx-4 block text-sm text-gray-400">Requires nomination by a State or Territory government, or sponsorship by a suitable family member. You must have an occupation on the <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/mltssl/" @click.stop>MLTSSL</a> or <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/stsol/" @click.stop>STSOL</a> or <a class="underline text-blue-600" target="_blank" href="https://www.anzscosearch.com/rol/" @click.stop>ROL</a>.</span>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="age" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Age</h1>
+        <div class="text-xl pb-4 text-gray-800">Your age at the time of invitation to apply for the visa.</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="age"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="age18" class="flex items-center" x-on:click="age=25">
+              <input x-model="selected[2]" id="age18" name="age" type="radio" value="18 to 24" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span class="mx-4 block text-base text-black">18 to 24</span>
+            </label>
+            <label for="age25" class="flex items-center" x-on:click="age=30">
+              <input x-model="selected[2]" id="age25" name="age" type="radio" value="25 to 32" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span class="mx-4 block text-base text-black">25 to 32</span>
+            </label>
+            <label for="age33" class="flex items-center" x-on:click="age=25">
+              <input x-model="selected[2]" id="age33" name="age" type="radio" value="33 to 39" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span class="mx-4 block text-base text-black">33 to 39</span>
+            </label>
+            <label for="age40" class="flex items-center" x-on:click="age=15">
+              <input x-model="selected[2]" id="age40" name="age" type="radio" value="40 to 44" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <span class="mx-4 block text-base text-black">40 to 44</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="c-english" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">English Language</h1>
+        <div class="text-xl pb-4 text-gray-800">What are your English Language qualifications at the time of invitation to apply for the visa (⚠️ test taken on or after 7 August 2025)?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="english"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="eng-competent" class="flex items-center" x-on:click="english=0">
+              <div><input x-model="selected[3]" id="eng-competent" name="english" type="radio" value="Competent" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <div><label for="eng-competent" class="mx-4 block text-base text-black">Competent English</label></div>
+                <label for="eng-competent" class="mx-4 block text-sm text-gray-300">
+                  <ul class="ml-4 mt-2">
+                    <li>Passport from UK, USA, Canada, NZ or Ireland; or</li>
+                    <li>IELTS: at least 6 in each component; or</li>
+                    <li>PTE Academic: 47 in Listening, 48 Reading, 51 Writing, 54 Speaking; or</li>
+                    <li>TOEFL iBT: 16 in Listening, 16 Reading, 19 Writing, 19 Speaking; or</li>
+                    <li>C1 Advanced: 163 in Listening, 163 Reading, 170 Writing, 179 Speaking; or</li>
+                    <li>OET: 290 in Listening, 310 Reading, 290 Writing, 330 Speaking; or</li>
+                    <li>CELPIP General: at least 7 in each component; or</li>
+                    <li>LANGUAGECERT Academic: 57 in Listening, 60 Reading, 64 Writing, 70 Speaking; or</li>
+                    <li>MET: 56 in Listening, 55 Reading, 57 Writing, 48 Speaking</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+            <label for="eng-proficient" class="flex items-center" x-on:click="english=10">
+              <div><input x-model="selected[3]" id="eng-proficient" name="english" type="radio" value="Proficient" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="eng-proficient" class="mx-4 block text-base text-black">Proficient English</label>
+                <label for="eng-proficient" class="mx-4 block text-sm text-gray-300">
+                  <ul class="ml-4 mt-2">
+                    <li>IELTS: at least 7 in each component; or</li>
+                    <li>PTE Academic: 58 in Listening, 59 Reading, 69 Writing, 76 Speaking; or</li>
+                    <li>TOEFL iBT: 22 in Listening, 22 Reading, 26 Writing, 24 Speaking; or</li>
+                    <li>C1 Advanced: 175 in Listening, 179 Reading, 193 Writing, 194 Speaking; or</li>
+                    <li>OET: 350 in Listening, 360 Reading, 380 Writing, 360 Speaking; or</li>
+                    <li>CELPIP 9 in Listening, 8 Reading, 10 Writing, 8 Speaking; or</li>
+                    <li>LANGUAGECERT Academic: 67 in Listening, 71 Reading, 78 Writing, 82 Speaking; or</li>
+                    <li>MET: 61 in Listening, 63 Reading, 74 Writing, 59 Speaking</li>
+
+                  </ul>
+                </label>
+              </div>
+            </label>
+            <label for="eng-superior" class="flex items-center" x-on:click="english=20">
+              <div><input x-model="selected[3]" id="eng-superior" name="english" type="radio" value="Superior" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="eng-superior" class="mx-4 block text-base text-black">Superior English</label>
+                <label for="eng-superior" class="mx-4 block text-sm text-gray-300">
+                  <ul class="ml-4 mt-2">
+                    <li>IELTS: at least 8 in each component; or</li>
+                    <li>PTE Academic: 69 in Listening, 70 Reading, 85 Writing, 88 Speaking; or</li>
+                    <li>TOEFL iBT: 26 in Listening, 27 Reading, 30 Writing, 28 Speaking; or</li>
+                    <li>C1 Advanced: 186 in Listening, 190 Reading, 210 Writing, 208 Speaking; or</li>
+                    <li>OET: 390 in Listening, 400 Reading, 420 Writing, 400 Speaking; or</li>
+                    <li>CELPIP 10 in Listening, 10 Reading, 12 Writing, 10 Speaking; or</li>
+                    <li>LANGUAGECERT Academic: 80 in Listening, 83 Reading, 89 Writing, 89 Speaking; or</li>
+                    <li>MET: Excluded</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="overseaswork" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Overseas Work Experience</h1>
+        <div class="text-xl pb-4 text-gray-800">In the last 10 years, how long have you worked in your nominated skilled occupation or closely related occupation outside Australia?</div>
+        <div class="text-sm ml-4 pb-4 text-gray-400">
+          <ul>
+            <li>For the employment to be counted it must be at least 20 hours per week for remuneration</li>
+            <li>The maximum points that can be awarded for 'Overseas Work Experience' and 'Australian Work Experience' combined, is 20 points</li>
+          </ul>
+        </div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="overseaswork"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="overseaswork8" class="flex items-center" x-on:click="overseaswork=15">
+              <input x-model="selected[4]" id="overseaswork8" name="overseaswork" type="radio" value="8 years or more" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="overseaswork8" class="mx-4 block text-base text-black">8 years or more</label>
+            </label>
+            <label for="overseaswork5" class="flex items-center" x-on:click="overseaswork=10">
+              <input x-model="selected[4]" id="overseaswork5" name="overseaswork" type="radio" value="5 to 7 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="overseaswork5" class="mx-4 block text-base text-black">5 to 7 years</label>
+            </label>
+            <label for="overseaswork3" class="flex items-center" x-on:click="overseaswork=5">
+              <input x-model="selected[4]" id="overseaswork3" name="overseaswork" type="radio" value="3 to 4 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="overseaswork3" class="mx-4 block text-base text-black">3 to 4 years</label>
+            </label>
+            <label for="overseaswork1" class="flex items-center" x-on:click="overseaswork=0">
+              <input x-model="selected[4]" id="overseaswork1" name="overseaswork" type="radio" value="Less than 3 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="overseaswork1" class="mx-4 block text-base text-black">Less than 3 years</label>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="auswork" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Australian Work Experience</h1>
+        <div class="text-xl pb-4 text-gray-800">In the last 10 years, how long have you worked in your nominated skilled occupation or closely related occupation in Australia?</div>
+        <div class="text-sm pb-4 text-gray-400">The maximum points that can be awarded for 'Overseas Work Experience' and 'Australian Work Experience' combined, is 20 points.</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="auswork"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="auswork8" class="flex items-center" x-on:click="auswork=20">
+              <input x-model="selected[5]" id="auswork8" name="auswork" type="radio" value="8 years or more" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="auswork8" class="mx-4 block text-base text-black">8 years or more</label>
+            </label>
+            <label for="auswork5" class="flex items-center" x-on:click="auswork=15">
+              <input x-model="selected[5]" id="auswork5" name="auswork" type="radio" value="5 to 7 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="auswork5" class="mx-4 block text-base text-black">5 to 7 years</label>
+            </label>
+            <label for="auswork3" class="flex items-center" x-on:click="auswork=10">
+              <input x-model="selected[5]" id="auswork3" name="auswork" type="radio" value="3 to 4 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="auswork3" class="mx-4 block text-base text-black">3 to 4 years</label>
+            </label>
+            <label for="auswork1" class="flex items-center" x-on:click="auswork=5">
+              <input x-model="selected[5]" id="auswork1" name="auswork" type="radio" value="1 to 2 years" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="auswork1" class="mx-4 block text-base text-black">1 to 2 years</label>
+            </label>
+            <label for="auswork0" class="flex items-center" x-on:click="auswork=0">
+              <input x-model="selected[5]" id="auswork0" name="auswork" type="radio" value="Less than 1 year" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="auswork0" class="mx-4 block text-base text-black">Less than 1 year</label>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="qual" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Educational Qualifications</h1>
+        <div class="text-xl pb-4 text-gray-800">What is your highest qualification?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="qual"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="qual1" class="flex items-center" x-on:click="qual=20">
+              <div><input x-model="selected[6]" id="qual1" name="qual" type="radio" value="PhD / Doctorate" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="qual1" class="mx-4 block text-base text-black">A Doctorate degree (PhD) from an Australian educational institution or a Doctorate from another educational institution that is of a recognised standard</label>
+              </div>
+            </label>
+            <label for="qual2" class="flex items-center" x-on:click="qual=15">
+              <div><input x-model="selected[6]" id="qual2" name="qual" type="radio" value="Bachelor degree" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="qual2" class="mx-4 block text-base text-black">A Bachelor degree from an Australian educational institution or a Bachelor qualification, from another educational institution that is of a recognised standard</label>
+              </div>
+            </label>
+            <label for="qual3" class="flex items-center" x-on:click="qual=10">
+              <div><input x-model="selected[6]" id="qual3" name="qual" type="radio" value="Diploma or trade qualification" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="qual3" class="mx-4 block text-base text-black">A diploma or trade qualification completed in Australia; or other award or qualification recognised by the skills assessing authority</label>
+              </div>
+            </label>
+            <label for="qual4" class="flex items-center" x-on:click="qual=0">
+              <div><input x-model="selected[6]" id="qual4" name="qual" type="radio" value="No recognised qualifications" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="qual4" class="mx-4 block text-base text-black">No Recognised Qualifications</label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="ausqual" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Australian Educational Qualification</h1>
+        <div class="text-xl pb-4 text-gray-800">Degree, diploma, advanced diploma or trade qualification from an Australian educational institution which took at least 2 years of full-time study and was taught in English.</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="ausqual"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="ausqualy" class="flex items-center" x-on:click="ausqual=5">
+              <div><input x-model="selected[7]" id="ausqualy" name="ausqual" type="radio" value="Yes" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="ausqualy" class="mx-4 block text-base text-black">Yes</label>
+              </div>
+            </label>
+            <label for="ausqualn" class="flex items-center" x-on:click="ausqual=0;regional=0;selected[8]='No'">
+              <div><input x-model="selected[7]" id="ausqualn" name="ausqual" type="radio" value="No" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="ausqualn" class="mx-4 block text-base text-black">No</label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div x-show="ausqual" id="c-regional" class="relative bg-gray-100 ml-10 p-6 rounded shadow-lg" x-transition:enter="transition-opacity ease-in-out duration-200" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-in-out duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Designated regional area study</h1>
+        <div class="text-xl pb-4 text-gray-800">Did you live and study in a ‘designated regional area’ of Australia and complete a course which meets the ‘Australian study requirement’ at the time of invitation to apply for the visa?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="regional"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="regionaly" class="flex items-center" x-on:click="regional=5">
+              <div><input x-model="selected[8]" id="regionaly" name="regional" type="radio" value="Yes" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="regionaly" class="mx-4 block text-base text-black">Yes</label>
+              </div>
+            </label>
+            <label for="regionaln" class="flex items-center" x-on:click="regional=0">
+              <div><input x-model="selected[8]" id="regionaln" name="regional" type="radio" value="No" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="regionaln" class="mx-4 block text-base text-black">No</label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="special" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Specialist Educational Qualification</h1>
+        <div class="text-xl pb-4 text-gray-800">A Masters degree by research or a Doctorate degree from an Australian educational institution that included at least two academic years in a relevant field (Natural and Physical Sciences, Information Technology or Engineering and Related Technologies).</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="special"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="specialy" class="flex items-center" x-on:click="special=10">
+              <div><input x-model="selected[9]" id="specialy" name="special" type="radio" value="Yes" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="specialy" class="mx-4 block text-base text-black">Yes</label>
+              </div>
+            </label>
+            <label for="specialn" class="flex items-center" x-on:click="special=0">
+              <div><input x-model="selected[9]" id="specialn" name="special" type="radio" value="No" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="specialn" class="mx-4 block text-base text-black">No</label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="acl" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Accredited Community Language</h1>
+        <div class="text-xl pb-4 text-gray-800">Do you hold any one of the following?</div>
+        <div class="text-sm ml-4 pb-4 text-gray-400">
+          <ul>
+            <li>Accreditation at the paraprofessional level or above;</li>
+            <li>Certification at the certified provisional level or above;</li>
+            <li>A community language credential</li>
+          </ul>
+        </div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="acl"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="acl-y" class="flex items-center" x-on:click="acl=5">
+              <input x-model="selected[10]" id="acl-y" name="acl" type="radio" value="Yes" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="acl-y" class="mx-4 block text-base text-black">Yes</label>
+            </label>
+            <label for="acl-n" class="flex items-center" x-on:click="acl=0">
+              <input x-model="selected[10]" id="acl-n" name="acl" type="radio" value="No" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+              <label for="acl-n" class="mx-4 block text-base text-black">No</label>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="partner" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Partner Qualifications</h1>
+        <div class="text-xl pb-4 text-gray-800">Do you have a partner (spouse or de facto partner) who meets the following criteria?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="partner"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="partner1" class="flex items-center" x-on:click="partner=10">
+              <div><input x-model="selected[11]" id="partner1" name="partner" type="radio" value="10 points" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="partner1" class="mx-4 block text-base text-black">10 points</label>
+                <label for="partner1" class="mx-4 block text-sm text-gray-400">
+                  <ul class="ml-4 mt-2">
+                    <li>My partner is aged under 45, and</li>
+                    <li>My partner has Competent English, and</li>
+                    <li>My partner is an applicant of the same subclass of visa as me, and</li>
+                    <li>My partner nominated a suitable skilled occupation and obtained a positive skills assessment (that is not for a Subclass 485 visa)</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+            <label for="partner2" class="flex items-center" x-on:click="partner=10">
+              <div><input x-model="selected[11]" id="partner2" name="partner" type="radio" value="10  points" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="partner2" class="mx-4 block text-base text-black">10 points</label>
+                <label for="partner2" class="mx-4 block text-sm text-gray-400">
+                  <ul class="ml-4 mt-2">
+                    <li>I don’t have a spouse or de facto partner, or</li>
+                    <li>My partner is an Australian permanent resident or an Australian citizen</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+            <label for="partner3" class="flex items-center" x-on:click="partner=5">
+              <div><input x-model="selected[11]" id="partner3" name="partner" type="radio" value="5 points" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="partner3" class="mx-4 block text-base text-black">5 points</label>
+                <label for="partner3" class="mx-4 block text-sm text-gray-400">
+                  <ul class="ml-4 mt-2">
+                    <li>My partner has Competent English, and</li>
+                    <li>My partner is an applicant of the same subclass of visa as me, and</li>
+                    <li>My partner is not an Australian permanent resident or an Australian citizen</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+            <label for="partner4" class="flex items-center" x-on:click="partner=0">
+              <div><input x-model="selected[11]" id="partner4" name="partner" type="radio" value="0 points" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="partner4" class="mx-4 block text-base text-black">0 points</label>
+                <label for="partner4" class="mx-4 block text-sm text-gray-400">
+                  <ul class="ml-4 mt-2">
+                    <li>None of the above</li>
+                  </ul>
+                </label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      
+      <div id="professional" class="relative bg-white p-6 rounded shadow-lg">
+        <h1 class="text-2xl font-semibold mb-2 text-gray-900">Professional Year in Australia</h1>
+        <div class="text-xl pb-4 text-gray-800">Did you complete a professional year program in Australia in your nominated skilled occupation for at least 12 months in the 48 months immediately before the time of invitation to apply for the visa?</div>
+        <div class="absolute top-4 right-4 w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center text-lg font-bold"><span x-text="professional"></span></div>
+
+        <fieldset>
+          <div class="space-y-3">
+            <label for="professionaly" class="flex items-center" x-on:click="professional=5">
+              <div><input x-model="selected[12]" id="professionaly" name="professional" type="radio" value="Yes" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="professionaly" class="mx-4 block text-base text-black">Yes</label>
+              </div>
+            </label>
+            <label for="professionaln" class="flex items-center" x-on:click="professional=0">
+              <div><input x-model="selected[12]" id="professionaln" name="professional" type="radio" value="No" class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500"></div>
+              <div>
+                <label for="professionaln" class="mx-4 block text-base text-black">No</label>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+  </div>
+</div>{"id":14756,"date":"2025-12-18T15:13:44","date_gmt":"2025-12-18T05:13:44","guid":{"rendered":"https:\/\/www.anzscosearch.com\/?page_id=14756"},"modified":"2025-12-19T17:03:49","modified_gmt":"2025-12-19T07:03:49","slug":"points-test","status":"publish","type":"page","link":"https:\/\/www.anzscosearch.com\/points-test\/","title":{"rendered":"SkillSelect Visa Points Test Calculator"},"content":{"rendered":"[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; row_position_desktop=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; class=&#8221;calculator-title&#8221; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221; shape_type=&#8221;&#8221; gradient_type=&#8221;default&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; flex_gap_desktop=&#8221;10px&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/1&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; column_padding_type=&#8221;default&#8221; gradient_type=&#8221;default&#8221;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<p style=\"padding-bottom: 10px;\">This calculator is current to the <strong>2025-26 Skilled Migration program<\/strong>. The current entry-level mark is <span style=\"background-color: #2196f3; color: white; border-radius: 3px; padding: 2px 8px; margin-left: 2px;\">65 points<\/span><\/p>\n<p>Check to see if you meet the minimum score on the Points Test for General Skilled Migration visas (subclass <a class=\"uline\" href=\"https:\/\/www.anzscosearch.com\/skilled-independent-189-visa\/\" target=\"_blank\" rel=\"noopener\">189<\/a>, <a class=\"uline\" href=\"https:\/\/www.anzscosearch.com\/skilled-nominated-190-visa\/\" target=\"_blank\" rel=\"noopener\">190<\/a>, <a class=\"uline\" href=\"https:\/\/www.anzscosearch.com\/skilled-work-regional-491-visa\/\" target=\"_blank\" rel=\"noopener\">491<\/a>).[\/vc_column_text][divider line_type=&#8221;No Line&#8221; custom_height=&#8221;5&#8243;][\/vc_column][\/vc_row][vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; row_position_desktop=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; class=&#8221;fixedElement&#8221; advanced_gradient_angle=&#8221;0&#8243; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221; gradient_type=&#8221;default&#8221; shape_type=&#8221;&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; sticky_content=&#8221;true&#8221; sticky_content_functionality=&#8221;js&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;10\/12&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221; column_padding_type=&#8221;default&#8221; content_layout=&#8221;default&#8221;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;][\/vc_column_text][\/vc_column][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; flex_gap_desktop=&#8221;10px&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;2\/12&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221;][vc_widget_sidebar enable_sticky=&#8221;true&#8221; sidebar_id=&#8221;page-sidebar&#8221;][\/vc_column][\/vc_row]\n","protected":false},"excerpt":{"rendered":"<p>[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; row_position_desktop=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; class=&#8221;calculator-title&#8221; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221; shape_type=&#8221;&#8221; gradient_type=&#8221;default&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221;&#8230;<\/p>\n","protected":false},"author":1,"featured_media":110527,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"_acf_changed":false,"footnotes":""},"class_list":["post-14756","page","type-page","status-publish","has-post-thumbnail"],"acf":[],"_links":{"self":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/14756","targetHints":{"allow":["GET"]}}],"collection":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/users\/1"}],"replies":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/comments?post=14756"}],"version-history":[{"count":5,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/14756\/revisions"}],"predecessor-version":[{"id":116855,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/14756\/revisions\/116855"}],"wp:featuredmedia":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/media\/110527"}],"wp:attachment":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/media?parent=14756"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}

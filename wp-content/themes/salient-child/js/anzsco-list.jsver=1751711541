@@ -1,0 +1,85 @@
+jQuery(function() {
+
+  jQuery("#occupation").autocomplete({
+    source: null,
+    minLength: 2,
+    select: function(event, ui) {
+      jQuery("#anzscohd_id").val(ui.item.id);
+      jQuery("#anzscohd_code").val(ui.item.code);
+      search();
+    },
+    response: function(event, ui) {
+
+      // loop through each item in the response
+      jQuery.each(ui.content, function(index, item) {
+        
+        // Occupation in Alternative Title / Specialisation / NEC & in ANZSCO v2022
+        if (['A', 'S', 'N'].includes(item.title) && item.type === 'v2022') {
+          item.label = "<div><span class='ui-badge' style='font-weight:bold; border-radius:2px;color:white;background-color:#3f51b5;margin-right:5px;font-size:10px;padding:2px 6px;'>"
+            + item.title + "</span>" + item.label + " <span style='font-size:14px;'>[" + item.code + "]</span></div><div><span class='ui-badge' style='font-weight:bold;border-radius:5px;color:black;background-color:#f5e662;'>v2022</span></div>";
+        
+        // Occupation in Alternative Title / Specialisation / NEC
+        } else if (['A', 'S', 'N'].includes(item.title)) {
+          item.label = "<div><span class='ui-badge' style='font-weight:bold; border-radius:2px;color:white;background-color:#3f51b5;margin-right:5px;font-size:10px;padding:2px 6px;'>"
+            + item.title + "</span>" + item.label + " <span style='font-size:14px;'>[" + item.code + "]</span></div>";
+        
+        // Occupation in ANZSCO v2022
+        } else if (item.type === 'v2022') {
+          item.label = item.label + "</span><div><span class='ui-badge' style='font-weight:bold;border-radius:5px;color:black;background-color:#f5e662;'>v2022</span></div>";
+        }
+        
+      });
+    }
+  });
+
+  if (jQuery.ui && jQuery.ui.autocomplete) {
+    jQuery.ui.autocomplete.prototype._renderItem = function(ul, item) {
+        return jQuery("<li>")
+          .append("<div>" + item.label + "</div>")
+          .appendTo(ul);
+    };
+  }
+
+  jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/anzscov13.json?v=9.01', function(json) {
+    jQuery("#occupation").autocomplete('option', 'source', json)
+  });
+
+  function split( val ) {
+    return val.split( /,\s*/ );
+  }
+  function extractLast( term ) {
+    return split( term ).pop();
+  }
+
+  jQuery( "#tags" )
+    // don't navigate away from the field on tab when selecting an item
+    .on( "keydown", function( event ) {
+      if ( event.keyCode === jQuery.ui.keyCode.TAB &&
+        jQuery( this ).autocomplete( "instance" ).menu.active ) {
+        event.preventDefault();
+      }
+    })
+    .autocomplete({
+      minLength: 0,
+      source: function( request, response ) {
+        // delegate back to autocomplete, but extract the last term
+        response(jQuery.ui.autocomplete.filter(
+          listAnzscoCodes, extractLast( request.term ) ) );
+      },
+      focus: function() {
+        // prevent value inserted on focus
+        return false;
+      },
+      select: function( event, ui ) {
+        var terms = split( this.value );
+        // remove the current input
+        terms.pop();
+        // add the selected item
+        terms.push( ui.item.value );
+        // add placeholder to get the comma-and-space at the end
+        terms.push( "" );
+        this.value = terms.join( ", " );
+        return false;
+      }
+    });
+});

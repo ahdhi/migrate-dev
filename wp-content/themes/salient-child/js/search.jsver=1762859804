@@ -1,0 +1,595 @@
+///////////////////////////////////
+// SEARCH BY ANZSCO CODE
+///////////////////////////////////
+
+var anzscov13;
+var anzscov2022;
+var osca;
+var anzscov13Txt = "<a class='uline' href='https://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0' target='_blank'>ANZSCO version 1.3</a>";
+var anzscov2022Txt = "<a class='uline' href='https://www.abs.gov.au/statistics/classifications/anzsco-australian-and-new-zealand-standard-classification-occupations/2022' target='_blank'>ANZSCO version 2022</a>";
+var oscaTxt = "<a class='uline' href='https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0' target='_blank'>OSCA version 1.0</a>";
+
+jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/anzscov13.json?v=9.01', function(json) {
+	anzscov13 = json;
+});
+jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/anzscov13plus.json?v=1.00', function(json) {
+	anzscov13plus = json;
+});
+jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/anzscov2022.json', function(json) {
+	anzscov2022 = json;
+});
+jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/osca.json', function(json) {
+	osca = json;
+});
+
+jQuery('#toggleTitle').click(function(event){
+  // Include Alternative Titles / Specialisations / NEC
+  if (jQuery('#toggleTitle').is(":checked")){
+    jQuery("#occupation").autocomplete('option', 'source', anzscov13plus)
+    jQuery("#occupation").val(null);
+    jQuery(".label").css('color', 'black');
+		if (jQuery('[name="toggle-version"]:checked').val() === 'v13') {
+			jQuery('#occupation').attr('placeholder', 'Type occupation code, name, specialisation, alternative title or NEC');
+		}
+
+	} else {
+    jQuery("#occupation").autocomplete('option', 'source', anzscov13)
+    jQuery("#occupation").val(null);
+		jQuery('#occupation').attr('placeholder', 'Type occupation code or name');
+  }
+});
+  
+function search() {
+	var anzsco_code = jQuery('#anzscohd_code').val();
+	var anzsco_id = jQuery('#anzscohd_id').val();
+	if (!anzsco_code) {
+    jQuery('#anzscohd_code').val(jQuery('#occupation').val());
+		anzsco_code = jQuery('#occupation').val();
+	}
+
+	if (jQuery('[name="toggle-version"]').length === 0 || jQuery('[name="toggle-version"]:checked').val() === 'v13') {
+		jQuery.ajax({
+			type: 'GET',
+			cache: false,
+			beforeSend: before,
+			complete: complete,
+			url: anzscoajax.ajaxurl,
+			data: ({action : 'get_data_anzsco', 'fromURL': false, 'anzsco_id': anzsco_id, 'anzsco_code': anzsco_code}),
+			success: function(response) {
+				jQuery("#print_resultA").html(response);
+				jQuery('html, body').animate({
+					scrollTop: jQuery("#anchor").offset().top-90
+				}, 500);
+				// Force layout recalculation to prevent white band issue
+				jQuery('a[href="#tab-tab2"]').trigger('click');
+				jQuery('a[href="#tab-tab1"]').trigger('click');
+			}
+		});
+
+	} else if (jQuery('[name="toggle-version"]:checked').val() === 'v2022') {
+		jQuery.ajax({
+			type: 'GET',
+			cache: false,
+			beforeSend: before,
+			complete: complete,
+			url: anzscoajax.ajaxurl,
+			data: ({action : 'get_data_anzsco_v2022', 'anzsco_id': anzsco_id, 'anzsco_code': anzsco_code}),
+			success: function(response) {
+				jQuery("#print_resultB").html(response);
+				jQuery('html, body').animate({
+					scrollTop: jQuery("#anchor").offset().top-90
+				}, 500);
+			}
+		});
+
+	} else if (jQuery('[name="toggle-version"]:checked').val() === 'osca') {
+		jQuery.ajax({
+			type: 'GET',
+			cache: false,
+			beforeSend: before,
+			complete: complete,
+			url: anzscoajax.ajaxurl,
+			data: ({action : 'get_data_osca', 'anzsco_id': anzsco_id, 'anzsco_code': anzsco_code}),
+			success: function(response) {
+				jQuery("#print_resultC").html(response);
+				jQuery('html, body').animate({
+					scrollTop: jQuery("#anchor").offset().top-90
+				}, 500);
+			}
+		});
+
+	}
+}
+
+function before(){
+	jQuery('[name="toggle-version"]').prop('disabled', true);
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function complete(){
+	jQuery('[name="toggle-version"]').prop('disabled', false);
+	var code = jQuery('#occupation').val();
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+	jQuery(document).ready(function() {
+		preTitle = 'ANZSCO';
+		if (jQuery('[name="toggle-version"]:checked').val() === 'osca') {
+			preTitle = 'OSCA';
+		}
+		document.title = preTitle + ' ' + code + ' | Australia Visa options';
+	});
+	jQuery('#occupation').val(null);
+	jQuery("#genReportTxt").html("<span>ANZSCO Infosheet</span>");
+	acf.do_action('append', jQuery('#tab-tab7'));
+}
+
+///////////////////////////////////
+// SEARCH BY STATE
+///////////////////////////////////
+function aus_state_list(state){
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: function(){
+      var st = "#spin-"+ state;
+      jQuery(st).toggleClass('fa-circle-o-notch fa-spin');
+    },
+		complete: function(){
+      var st = "#spin-"+ state;
+      jQuery('#loader-ausmap').hide();
+      jQuery(st).toggleClass('fa-circle-o-notch fa-spin');
+			jQuery('#sagrad').hide();
+			jQuery('#sainsa').hide();
+			jQuery('#sareg').hide();
+			jQuery('#qldoffshore').hide();
+    },
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_anzsco_by_state', 'state':state}),
+		success: function(msg) {
+			document.getElementById("print_result_state").innerHTML = msg;
+
+  		['#myTable', '#myTable_grad', '#myTable_insa', '#myTable_regi', '#myTable_offs', '#myTable_qldon', '#myTable_qldoff'].forEach(function (sel) {
+				var $t = jQuery(sel);
+				if (!$t.length) return;
+
+				if (jQuery.fn.DataTable.isDataTable(sel)) {
+					$t.DataTable().clear().destroy();
+				}
+
+				$t.DataTable({
+        	pageLength: 50,
+        	columnDefs: [{ targets: "_all", defaultContent: "" }]
+      	});
+			});
+		}
+	});
+}
+
+///////////////////////////////////
+// DAMA ALL
+///////////////////////////////////
+function dama_list(dama){
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: function(){
+      var st = "#spin-"+ dama;
+      jQuery(st).toggleClass('fa-circle-o-notch fa-spin');
+    },
+		complete: function(){
+      var st = "#spin-"+ dama;
+      jQuery('#loader-ausmap').hide();
+      jQuery(st).toggleClass('fa-circle-o-notch fa-spin');
+    },
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_dama', 'dama':dama}),
+		success: function(msg) {
+			document.getElementById("print_result_dama").innerHTML = msg;
+			jQuery('#myTable').DataTable({
+				"orderCellsTop": false,
+		 		"pageLength": 50
+	 		});
+		}
+	});
+}
+
+///////////////////////////////////
+// SEARCH BY ANZSCO GROUP
+///////////////////////////////////
+jQuery('#search_group').click(function(event){
+	var majorGroup = jQuery('#majorGroup').val();
+	var subMajorGroup = jQuery('#subMajorGroup').val();
+	var minorGroup = jQuery('#minorGroup').val();
+	var unitGroup = jQuery('#unitGroup').val();	
+
+  var messageTxt = `
+    <div style="padding-bottom:20px;" class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column boxed no-extra-padding inherit_tablet inherit_phone " data-shadow="small_depth" data-border-radius="3px" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
+        <div class="vc_column-inner">
+          <div class="column-bg-overlay-wrap" data-bg-animation="none">
+              <div class="column-bg-overlay"></div>
+          </div>
+          <div class="wpb_wrapper">
+              <div class="iwithtext">
+                <div class="iwt-icon"> <i class="icon-default-style fa fa-exclamation-triangle accent-color"></i> </div>
+                <div class="iwt-text">
+                  Please, select a <b>[$TEXT]</b></p>
+                </div>
+                <div class="clear"></div>
+              </div>
+          </div>
+        </div>
+    </div>`;
+
+	if (!majorGroup || !subMajorGroup || majorGroup == "0" || subMajorGroup == "0"){
+		messageText = messageTxt.replace("[$TEXT]", "Sub-Major Group");
+		if (!majorGroup || majorGroup == "0"){
+      messageText = messageTxt.replace("[$TEXT]", "Major Group");
+		}
+		jQuery('.message2').show();
+		jQuery('.message2').html(messageText);
+
+		jQuery(document).ready(function($) {
+		setTimeout(function(){
+			$(".message2").fadeOut("slow", function () {
+				$("div.mydiv").remove();});
+			}, 4000);
+		});
+		return;
+	}
+			
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: beforeSearchGroup,
+		complete: completeSearchGroup,
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_anzsco_by_group', 
+			'major': majorGroup, 'subMajor':subMajorGroup, 'minor':minorGroup, 'unit':unitGroup}),
+		success: function(msg) {
+			jQuery('#print_result_group').html(msg);
+		}
+	});
+});
+
+function beforeSearchGroup(){
+	jQuery('#search_group').attr('disabled', 'disabled');
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function completeSearchGroup(){
+	jQuery('#search_group').removeAttr('disabled');
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+}
+
+///////////////////////////////////
+// SEARCH BY ASSESSING AUTHORITY
+///////////////////////////////////
+jQuery('#search_assess').click(function(event){
+  var assessAuthority = jQuery('#assessAuth').val();
+
+	if ((!assessAuthority || assessAuthority == "0")){
+    messageText = `
+		<div style="padding-bottom:20px;" class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column boxed no-extra-padding inherit_tablet inherit_phone " data-shadow="small_depth" data-border-radius="3px" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
+			<div class="vc_column-inner">
+			<div class="column-bg-overlay-wrap" data-bg-animation="none">
+				<div class="column-bg-overlay"></div>
+			</div>
+			<div class="wpb_wrapper">
+				<div class="iwithtext">
+					<div class="iwt-icon"> <i class="icon-default-style fa fa-exclamation-triangle accent-color"></i> </div>
+					<div class="iwt-text">
+						Please, select an <b>Assessing Authority</b></p>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			</div>
+		</div>`;
+		
+		jQuery('#print_result_assess').html(null);
+    jQuery('.message').show();
+		jQuery('.message').html(messageText);
+		
+		jQuery(document).ready(function($) {
+		setTimeout(function(){
+			$(".message").fadeOut("slow", function () {
+				$("div.mydiv").remove();});
+			}, 3000);
+		});
+
+		return;
+	}
+
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: beforeSearchAssess,
+		complete: completeSearchAssess,
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_anzsco_by_assessing', 'assessing': assessAuthority}),
+		success: function(msg) {
+			jQuery('#print_result_assess').html(msg);
+		}
+	});
+});
+
+function beforeSearchAssess(){
+	jQuery('#search_assess').attr('disabled', 'disabled');
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function completeSearchAssess(){
+	jQuery('#search_assess').removeAttr('disabled');
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+}
+
+///////////////////////////////////
+// OCCUPATION CEILINGS HISTORY
+///////////////////////////////////
+jQuery('#search_ceiling').click(function(event){
+	var program_year = jQuery('#ceiling_year').val();
+			
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: beforeSearchCeiling,
+		complete: completeSearchCeiling,
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_occupation_ceilings', 'programYear': program_year}),
+		success: function(msg) {
+		  jQuery('#print_occupation_ceilings').html(msg);
+		}
+	});
+});
+
+function beforeSearchCeiling(){
+	jQuery('#search_ceiling').attr('disabled', 'disabled');
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function completeSearchCeiling(){
+	jQuery('#search_ceiling').removeAttr('disabled');
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+}
+
+
+jQuery(document).on('change', 'input[type=checkbox]', function() {
+	jQuery("#prtMsg").html(null);
+
+	var toggleReportType = 'basic';
+	if (jQuery('#toggleReport').is(':checked')) {
+		var toggleReportType = jQuery('#toggleReport').val(); // returns "extended"
+	}
+
+	if (toggleReportType === 'basic') {
+		jQuery('#basic-report').show(500);
+		jQuery('#ext-report').hide(300);
+		jQuery("#genReportTxt").html("<span>ANZSCO Infosheet</span>");
+		jQuery('#typeReport_hd').val('basic');
+	} else if (toggleReportType === 'extended') {
+		jQuery('#basic-report').hide(300);
+		jQuery('#ext-report').show(500);
+		jQuery("#genReportTxt").html("<span>Occupation Report</span>");
+		jQuery('#typeReport_hd').val('extended');
+		jQuery('.label-report').css('color', 'black');
+	}
+
+});
+
+jQuery(document).on('change','input[type=radio]',function(){
+
+ 	var totalCount=jQuery('[name="totalCount"]:checked').val();
+ 	var toggle189=jQuery('[name="toggle189"]:checked').val();
+ 	var toggle190=jQuery('[name="toggle190"]:checked').val();
+ 	var toggle491=jQuery('[name="toggle491"]:checked').val();
+ 	var toggle491f=jQuery('[name="toggle491f"]:checked').val();
+ 	var togglesa=jQuery('[name="sa-stream"]:checked').val();
+ 	var toggleqld=jQuery('[name="qld-list"]:checked').val();
+ 	var toggleVersion=jQuery('[name="toggle-version"]:checked').val();
+
+	if (totalCount === 'visa189') {
+		jQuery('#visa189').show(500);
+		jQuery('#visa190').hide(300);
+		jQuery('#visa491').hide(300);
+	} else if (totalCount === 'visa190') {
+		jQuery('#visa189').hide(300);
+		jQuery('#visa190').show(500);
+		jQuery('#visa491').hide(300);
+	} else if (totalCount === 'visa491') {
+		jQuery('#visa189').hide(300);
+		jQuery('#visa190').hide(300);
+		jQuery('#visa491').show(500);
+	}
+
+	if (toggle189 === 'submitted') {
+		jQuery('#eoi189_sub').show(500);
+		jQuery('#eoi189_inv').hide(300);
+		jQuery('#eoi189_lod').hide(300);
+	} else if (toggle189 === 'invited') {
+		jQuery('#eoi189_sub').hide(300);
+		jQuery('#eoi189_inv').show(500);
+		jQuery('#eoi189_lod').hide(300);
+	} else if (toggle189 === 'lodged') {
+		jQuery('#eoi189_sub').hide(300);
+		jQuery('#eoi189_inv').hide(300);
+		jQuery('#eoi189_lod').show(500);
+	}
+
+	if (toggle190 === 'submitted') {
+		jQuery('#eoi190_sub').show(500);
+		jQuery('#eoi190_inv').hide(300);
+		jQuery('#eoi190_lod').hide(300);
+	} else if (toggle190 === 'invited') {
+		jQuery('#eoi190_sub').hide(300);
+		jQuery('#eoi190_inv').show(500);
+		jQuery('#eoi190_lod').hide(300);
+	} else if (toggle190 === 'lodged') {
+		jQuery('#eoi190_sub').hide(300);
+		jQuery('#eoi190_inv').hide(300);
+		jQuery('#eoi190_lod').show(500);
+	}
+
+	if (toggle491 === 'submitted') {
+		jQuery('#eoi491_sub').show(500);
+		jQuery('#eoi491_inv').hide(300);
+		jQuery('#eoi491_lod').hide(300);
+	} else if (toggle491 === 'invited') {
+		jQuery('#eoi491_sub').hide(300);
+		jQuery('#eoi491_inv').show(500);
+		jQuery('#eoi491_lod').hide(300);
+	} else if (toggle491 === 'lodged') {
+		jQuery('#eoi491_sub').hide(300);
+		jQuery('#eoi491_inv').hide(300);
+		jQuery('#eoi491_lod').show(500);
+	}
+
+	if (toggle491f === 'submitted') {
+		jQuery('#eoi491f_sub').show(500);
+		jQuery('#eoi491f_inv').hide(300);
+		jQuery('#eoi491f_lod').hide(300);
+	} else if (toggle491f === 'invited') {
+		jQuery('#eoi491f_sub').hide(300);
+		jQuery('#eoi491f_inv').show(500);
+		jQuery('#eoi491f_lod').hide(300);
+	} else if (toggle491f === 'lodged') {
+		jQuery('#eoi491f_sub').hide(300);
+		jQuery('#eoi491f_inv').hide(300);
+		jQuery('#eoi491f_lod').show(500);
+	}
+
+	if (togglesa === 'graduate') {
+		jQuery('#sagrad').show(500);
+		jQuery('#sainsa').hide(300);
+		jQuery('#sareg').hide(300);
+		jQuery('#saoff').hide(300);
+	} else if (togglesa === 'workingsa') {
+		jQuery('#sagrad').hide(300);
+		jQuery('#sainsa').show(500);
+		jQuery('#sareg').hide(300);
+		jQuery('#saoff').hide(300);
+	} else if (togglesa === 'regional') {
+		jQuery('#sagrad').hide(300);
+		jQuery('#sainsa').hide(300);
+		jQuery('#sareg').show(500);
+		jQuery('#saoff').hide(300);
+	} else if (togglesa === 'offshore') {
+		jQuery('#sagrad').hide(300);
+		jQuery('#sainsa').hide(300);
+		jQuery('#sareg').hide(300);
+		jQuery('#saoff').show(500);
+	}
+
+	if (toggleqld === 'onshore') {
+		jQuery('#qldonshore').show(500);
+		jQuery('#qldoffshore').hide(300);
+	} else if (toggleqld === 'offshore') {
+		jQuery('#qldonshore').hide(300);
+		jQuery('#qldoffshore').show(500);
+	}
+
+	if (toggleVersion === 'v13') {
+		if (jQuery('#toggleTitle').is(":checked")){
+			jQuery("#occupation").autocomplete('option', 'source', anzscov13plus)
+			jQuery('#occupation').attr('placeholder', 'Type occupation code, name, specialisation, alternative title or NEC');
+		} else {
+			jQuery("#occupation").autocomplete('option', 'source', anzscov13)
+		}
+
+    jQuery("#occupation").val(null);
+		jQuery('#print_resultA').show();
+		jQuery('#print_resultB').hide();
+		jQuery('#print_resultC').hide();
+    jQuery("#anzscoCatalogTxt").show(100);
+		jQuery("#anzscoCatalog2022Txt").hide(100);
+		jQuery("#anzscoCatalogOscaTxt").hide(100);
+    jQuery("#lastUpdateTxt").show();
+		jQuery('#toggleSpec').show(100);
+
+	} else if (toggleVersion === 'v2022') {
+    jQuery("#occupation").autocomplete('option', 'source', anzscov2022)
+    jQuery("#occupation").val(null);
+		jQuery('#print_resultA').hide();
+		jQuery('#print_resultB').show();
+		jQuery('#print_resultC').hide()
+    jQuery("#anzscoCatalogTxt").hide(100);
+    jQuery("#anzscoCatalog2022Txt").show(100);
+		jQuery("#anzscoCatalogOscaTxt").hide(100);
+    jQuery("#lastUpdateTxt").hide();
+		jQuery('#toggleSpec').hide(100);
+		jQuery('#occupation').attr('placeholder', 'Type occupation code or name');
+
+	} else if (toggleVersion === 'osca') {
+    jQuery("#occupation").autocomplete('option', 'source', osca)
+    jQuery("#occupation").val(null);
+		jQuery('#print_resultA').hide();
+		jQuery('#print_resultB').hide();
+		jQuery('#print_resultC').show()
+		jQuery("#anzscoCatalogTxt").hide(100);
+    jQuery("#anzscoCatalog2022Txt").hide(100);
+		jQuery("#anzscoCatalogOscaTxt").show(100);
+		jQuery("#lastUpdateTxt").hide();
+		jQuery('#toggleSpec').hide(100);
+		jQuery('#occupation').attr('placeholder', 'Type occupation code or name');
+	}
+});
+
+///////////////////////////////////
+// MULTISEARCH
+///////////////////////////////////
+jQuery('#multisearchBtn').click(function(event){
+	var multisearchTxt = jQuery('.js-multisearch').val();
+	jQuery.ajax({
+		type: 'POST',
+		beforeSend: before_multisearch,
+		complete: complete_multisearch,
+		url: anzscoajax.ajaxurl,
+		data: ({action : 'get_multisearch', 'multisearch': multisearchTxt}),
+		success: function(msg) {
+			jQuery('#print_result').html(msg);
+		}
+	});
+});
+
+function before_multisearch(){
+	jQuery('#multisearchBtn').attr('disabled', 'disabled');
+	jQuery('#multisearch').attr('disabled', 'disabled');
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function complete_multisearch(){
+	jQuery('#multisearchBtn').removeAttr('disabled');
+	jQuery('#multisearch').removeAttr('disabled');
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+}
+
+///////////////////////////////////
+// BACKLOG
+///////////////////////////////////
+function loadBacklogData() {
+	var month = jQuery('#backlog-month').val();
+	var id = jQuery('#anzscohd_id').val();
+	jQuery.ajax({
+			type: 'POST',
+			beforeSend: before_backlog,
+			complete: complete_backlog,
+			url: "../wp-content/themes/salient-child/custompages/backlog.php",
+			data: ({ 'month': month, 'anzscoid': id }),
+			success: function(msg) {
+					jQuery('#print_backlog').html(msg);
+			}
+	});
+}
+
+jQuery(document).on('click', '#backlogBtn', function(event) {
+	loadBacklogData();
+});
+
+function before_backlog(){
+	jQuery('#spin-bl').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function complete_backlog(){
+	jQuery('#spin-bl').toggleClass('fa-circle-notch fa-spin fa-search');
+	jQuery('#eoi189_inv').hide();
+	jQuery('#eoi190_inv').hide();
+	jQuery('#eoi491_inv').hide();
+	jQuery('#eoi491f_inv').hide();
+	jQuery('#eoi189_lod').hide();
+	jQuery('#eoi190_lod').hide();
+	jQuery('#eoi491_lod').hide();
+	jQuery('#eoi491f_lod').hide();
+}

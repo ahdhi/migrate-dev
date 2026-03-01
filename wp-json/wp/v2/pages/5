@@ -1,0 +1,340 @@
+<style id='dynamic-css-inline-css' type='text/css'>
+#header-space{background-color:#ffffff}@media only screen and (min-width:1000px){body #ajax-content-wrap.no-scroll{min-height:calc(100vh - 92px);height:calc(100vh - 92px)!important;}}@media only screen and (min-width:1000px){#page-header-wrap.fullscreen-header,#page-header-wrap.fullscreen-header #page-header-bg,html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header,.nectar_fullscreen_zoom_recent_projects,#nectar_fullscreen_rows:not(.afterLoaded) > div{height:calc(100vh - 91px);}.wpb_row.vc_row-o-full-height.top-level,.wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 91px);}html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header{top:92px;}.admin-bar #page-header-wrap.fullscreen-header,.admin-bar #page-header-wrap.fullscreen-header #page-header-bg,.admin-bar .nectar_fullscreen_zoom_recent_projects,.admin-bar #nectar_fullscreen_rows:not(.afterLoaded) > div{height:calc(100vh - 91px - 32px);}.admin-bar .wpb_row.vc_row-o-full-height.top-level,.admin-bar .wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 91px - 32px);}.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh - 90px)!important;}.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh - 90px - 32px)!important;}}@media only screen and (max-width:999px){.using-mobile-browser #nectar_fullscreen_rows:not(.afterLoaded):not([data-mobile-disable="on"]) > div{height:calc(100vh - 100px);}.using-mobile-browser .wpb_row.vc_row-o-full-height.top-level,.using-mobile-browser .wpb_row.vc_row-o-full-height.top-level > .col.span_12,[data-permanent-transparent="1"].using-mobile-browser .wpb_row.vc_row-o-full-height.top-level,[data-permanent-transparent="1"].using-mobile-browser .wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 100px);}html:not(.nectar-box-roll-loaded) .admin-bar .nectar-box-roll > #page-header-bg.fullscreen-header,.admin-bar .nectar_fullscreen_zoom_recent_projects,.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container,.admin-bar #nectar_fullscreen_rows:not(.afterLoaded):not([data-mobile-disable="on"]) > div{height:calc(100vh - 47px - 46px);}.admin-bar .wpb_row.vc_row-o-full-height.top-level,.admin-bar .wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 47px - 46px);}body[data-transparent-header="false"] #ajax-content-wrap.no-scroll{min-height:calc(100vh - 47px);height:calc(100vh - 47px);}}#nectar_fullscreen_rows{background-color:transparent;}body .row .tabbed >div:first-of-type{display:block;opacity:1;visibility:visible;position:relative;left:0;}body .tabbed[data-style*="material"][data-color-scheme="accent-color"] .wpb_tabs_nav li a:not(.active-tab):hover{color:#ff6633;}.tabbed[data-style*="material"][data-color-scheme="accent-color"] ul:after,.tabbed[data-style*="material"][data-color-scheme="accent-color"] ul li .active-tab{background-color:#ff6633;}.tabbed[data-style*="material"][data-color-scheme="accent-color"] ul li .active-tab:after{box-shadow:0 18px 50px #ff6633;}.tabbed[data-style*="material"] .wpb_tabs_nav li i{transition:none;}.tabbed[data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-style*="material"] .wpb_tabs_nav li svg{display:block;text-align:center;margin:0 0 8px 0;font-size:32px;}.tabbed[data-style*="material"] .wpb_tabs_nav{margin-bottom:65px;}.tabbed[data-style*="material"] .wpb_tabs_nav li{float:none;display:inline-block;}.tabbed[data-style*="material"] .wpb_tabs_nav:after,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] .wpb_tabs_nav li a:before,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] .wpb_tabs_nav li a:before{background-color:#000;display:block;left:0;width:100%;position:absolute;content:"";height:1px;opacity:0.25;visibility:visible;}.tabbed[data-style*="material"] ul:after{opacity:0.3;}.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] .wpb_tabs_nav li a,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] .wpb_tabs_nav li a,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] .wpb_tabs_nav li .active-tab,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] .wpb_tabs_nav li .active-tab{background-color:transparent;}.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] .wpb_tabs_nav li a:before,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] .wpb_tabs_nav li a:before{height:100%;top:0;opacity:0;transition:all 0.3s cubic-bezier(0.12,0.75,0.4,1);z-index:-1;border-radius:5px 5px 0 0;}.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] ul li .active-tab:before,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] ul li .active-tab:before{opacity:1;}.tabbed[data-style*="material"][data-full-width-line="true"] .wpb_tabs_nav:after{left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;width:100vw;}.tabbed[data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-style*="material"] .wpb_tabs_nav li svg{font-size:22px;margin-top:7px;line-height:22px;height:auto;margin-bottom:5px;width:auto;}.tabbed[data-style*="material"] .wpb_tabs_nav li a:not(.active-tab):hover,body .tabbed[data-style*="material"][data-color-scheme] .wpb_tabs_nav li a:not(.active-tab):hover{color:#000;}.tabbed[data-style*="material"] .wpb_tabs_nav li a:not(.active-tab):hover svg{fill:#000;}.tabbed[data-style*="material"] .wpb_tabs_nav li .active-tab:after{opacity:0.3;}.tabbed[data-style*="material"] .wpb_tabs_nav li a:after{transition:all 0.3s cubic-bezier(0.12,0.75,0.4,1);opacity:0.3;display:block;content:"";width:92%;height:92%;top:4%;left:4%;z-index:-2;position:absolute;}.tabbed[data-style*="material"] .wpb_tabs_nav li svg{margin:0 auto}.span_12.light .tabbed[data-style*="material"] >ul li a:not(.active-tab){color:rgba(255,255,255,0.7);}.span_12.light .tabbed[data-style*="material"] >ul li a:hover{color:rgba(255,255,255,1);}.tabbed[data-icon-size="30"][data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-icon-size="32"][data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-icon-size="34"][data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-icon-size="36"][data-style*="material"] .wpb_tabs_nav li i,.tabbed[data-icon-size="30"][data-style*="material"] .wpb_tabs_nav li svg,.tabbed[data-icon-size="32"][data-style*="material"] .wpb_tabs_nav li svg,.tabbed[data-icon-size="34"][data-style*="material"] .wpb_tabs_nav li svg,.tabbed[data-icon-size="36"][data-style*="material"] .wpb_tabs_nav li svg{margin-top:10px;margin-bottom:10px;}.tabbed[data-style="material"] .wpb_tabs_nav li a{transition:all 0.3s cubic-bezier(0.12,0.75,0.4,1);padding-top:13px;padding-bottom:13px;border:none;border-radius:5px 5px 0 0;}.tabbed[data-style="material"] >ul li a:not(.active-tab){background-color:transparent;}@media only screen and (max-width :690px){.tabbed[data-style*="material"] ul:after{display:none;}.tabbed[data-style="material"] .wpb_tabs_nav li a,.tabbed[data-style="material"] .wpb_tabs_nav li{display:block;text-align:center;}.tabbed[data-style="material"] ul li a,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-1"] ul li a:before,.tabbed[data-style*="material"][data-color-scheme="extra-color-gradient-2"] ul li a:before{border-radius:5px;}}div[data-style="default"] .toggle > .toggle-title a,div[data-style="default"] .toggle > .toggle-title{font-size:14px;line-height:14px}.light .toggles[data-style="default"] .toggle > .toggle-title a{color:#fff;}.light .toggles[data-style="default"] .toggle >div{background-color:transparent;}.screen-reader-text,.nectar-skip-to-content:not(:focus){border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;}.row .col img:not([srcset]){width:auto;}.row .col img.img-with-animation.nectar-lazy:not([srcset]){width:100%;}
+  .iconsmind-Box-withFolders:before{content:"\edab"}
+  .iconsmind-Text-Effect:before{content:"\ea3d"}
+  .iconsmind-Yes:before{content:"\ed06"}
+  .iconsmind-File:before{content:"\ee91"}
+</style>
+
+<link rel='stylesheet' id='iconsmind-core-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/iconsmind-core.css' type='text/css' media='all' />
+<link rel='stylesheet' id='nectar-element-tabbed-section-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/build/elements/element-tabbed-section.css' type='text/css' media='all' />
+<link rel='stylesheet' id='nectar-element-toggle-panels-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/build/elements/element-toggles.css' type='text/css' media='all' />
+<link rel='stylesheet' id='nectar-element-icon-with-text-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/build/elements/element-icon-with-text.css' type='text/css' media='all' />
+
+
+<input type="hidden" id="anzscohd_id">
+<input type="hidden" id="anzscohd_code">
+
+
+<div style="margin-bottom:16px; margin-top:20px;" class="row_col_wrap_12_inner col span_12 left">
+   <div style="margin-right:0;" class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone " data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
+      <div class="vc_column-inner">
+         <div class="wpb_wrapper">
+            <div class="wpb_text_column wpb_content_element ">
+               <div class="wpb_wrapper">
+                <div class="fontuser">
+                  <i id="spin" style="font-size:20px;" class="fa fa-search"></i>
+                  <input type="text" id="occupation" style="height: 50px; font-size: 16px;background-color:transparent;" class="input-field" placeholder="Type occupation code or name" autocomplete="off" />
+                </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+  
+  <div style="text-align:center;font-size:13px;line-height:1.8;font-style:italic;margin-bottom:10px">
+    <p style="padding-bottom:0;" id='anzscoCatalogTxt'></p>
+  </div>
+
+
+<div id="print_resultA">
+</div>
+<div id="print_resultB"></div>
+<div id="print_resultC"></div>
+
+<script type="text/javascript" src="https://www.anzscosearch.com/wp-content/themes/salient-child/assets/caveats.js?v=7.3"></script>
+
+<script type="text/javascript">
+
+  var countryCodes;
+  jQuery.getJSON('https://www.anzscosearch.com/wp-content/themes/salient-child/assets/countries.json', function(data) {
+    countryCodes = data;
+  });
+
+  jQuery(document).ready(function(e) {
+		jQuery('.open-popup-link').magnificPopup({
+      type:'inline',
+      midClick: true,
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      preloader: false,
+      mainClass: 'mfp-zoom-in',
+      alignTop: false
+	  });
+	});
+
+</script>
+
+<a href="#" data-mfp-src="#dialog-nsw" id="nsw" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#cavDialog-482" id="dialog-482" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-A" id="groupA" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-B" id="groupB" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-C" id="groupC" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-D" id="groupD" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-E" id="groupE" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-F" id="groupF" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-tra" id="tra" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-la" id="la" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#modalDialog" id="dialogReport" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-trt186" id="trt186" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-trt187" id="trt187" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-trt482" id="trt482" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-v12" id="v12" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dual-cat" id="dual" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#messageDialog" id="dialogMessage" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-tier" id="dialogTier" class="open-popup-link"></a>
+
+<div style='line-height:35px;' id="dialog-nsw" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="font-size:18px; color:#FF6633;">NSW 491 - Notes:</h4>
+  <div style="line-height: 25px;">
+  <ul style="padding-top:20px;">
+    <li>The NSW 491 Occupation List (Stream 2 & 3) published on the NSW Government website is <b>not regularly updated</b> by the state government and may not include the latest changes to occupations. Anzscosearch data on NSW nomination under streams 2 & 3 draws directly from information provided by each participating region.</li><br>
+    <li>Be aware that the NSW Government has recently started including occupations codes from the new ANZSCO catalogue v.2021 (i.e. Cotton Grower / Zoologist). For the sake of consistency with current legislation, Anzscosearch only uses ANZSCO codes from catalogue v1.3.</li>
+  </ul>
+  </div>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div style='line-height:35px;' id="cavDialog-482" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;"><span id="showTitle"></span></h4>
+  <div style="padding:10px 0px 15px 0px;"><span id="code"></span></div>
+  <div id="showCaveats"></div>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-A" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">A</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at Australian Bachelor degree or higher degree with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years.</li>
+  </ul>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-B" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">B</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree with an additional qualification at least Australian Qualifications Framework (AQF) Diploma level in a highly relevant field of study and at least two years of post qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree without a highly relevant field of study and at least three years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualification assessed at the AQF bachelor degree level), five years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-C" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">C</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at least AQF Diploma level with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at least AQF Diploma level with an additional qualification at least AQF Certificate IV in a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at least AQF Diploma level without a highly relevant field of study and at least two years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualification assessed at the AQF diploma level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-D" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">D</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Certificate IV with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Certificate IV without a highly relevant field of study and at least two years of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Certificate III with a highly relevant field of study and at least three years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualifications assessed at the AQF Certificate III or Certificate IV level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-E" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">E</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>					
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Diploma level with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years.</li>
+  </ul>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-F" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">F</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification/s assessed at least AQF Certificate II with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification/s assessed at Australian Certificate II without a highly relevant field of study and at least two years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualifications assessed at the AQF Certificate II level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-tra" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:10px;">Trades Recognition Australia (TRA)</h4>
+  <div style="line-height: 25px;">
+    <div style="font-size:20px;"><b>Australian Qualification By Occupation</b></div>
+    <div style="padding: 25px 0px;"><span class="badge-sq" id="tra-code" style="border:1px solid black;"></span></div>
+    <span id="tra-qualifications"></span>
+  </div>
+
+  <ul style="margin-left:15px; line-height:25px">
+    <li><a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://www.tradesrecognitionaustralia.gov.au/programs">Trades Recognition Australia (TRA)</a> <i class='icon-tiny fa fa-external-link'></i></li>
+    <li><a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://www.tradesrecognitionaustralia.gov.au/document/australian-qualification-occupation">Trades Recognition Australia (TRA) - Australian Qualification By Occupation</a> <i class='icon-tiny fa fa-external-link'></i></li>
+  </ul>
+  Last update: 05 December 2025
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-la" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">Industry Labour Agreement (ILA)</h4>
+  <div style="padding: 0px 0px 20px 0px;"><span class="badge-sq" id="la-code" style="border:1px solid black;"></span></div>
+  <p>This occupation is included in the following Industry Labour Agreements:</p>
+  <span id="la-results"></span>
+  <p>
+    <div style="padding-bottom:10px;"><a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://www.anzscosearch.com/industry-labour-agreement/">Industry Labour Agreement - List of occupations</a> <i class='icon-tiny fa fa-external-link'></i></div>
+    <div><a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://immi.homeaffairs.gov.au/visas/employing-and-sponsoring-someone/labour-agreements/types-of-labour-agreements/industry-labour-agreements">Industry Labour Agreements - Department Home Affairs</a> <i class='icon-tiny fa fa-external-link'></i></div>
+  </p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div style='line-height:35px;' id="modalDialog" class="modal-popup mfp-hide" style="line-height: initial;">
+  <h2 style="font-size:20px;">Generate <span id="genReportTxt"></span></h2>
+  <h5 style="font-size:14px;color:#19176E;" id="print_occupation"></h5>
+  <div id="proceed-report"><p style="padding-bottom: 15px;">Are you sure you want to proceed?</p></div>
+  <div id='spin-report' style='background-color:#e8f4ff;border-radius:5px;padding:10px;margin:20px 0;'><i style='margin-right: 10px;' class='fa-circle-o-notch fa-spin'></i>The Report is being generated...</div>
+  <div id="btn-report" style="text-align: right;">
+    <button style="cursor: pointer; padding: 5px 25px; margin-right:5px;" id="confirm-yes">Yes</button>
+    <button style="cursor: pointer; padding: 5px 25px;" id="confirm-no">No</button>
+  </div>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-trt186" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Subclass 186 Employer Nomination Scheme (ENS) - TRT stream</h4>
+  <p style="margin-top:10px;">The ENS Temporary Residence Transition (TRT) stream provides access to permanent residence for eligible visa holders.</p>
+  <p>To be eligible under the ENS TRT stream, an applicant must have an occupation which:</p>
+  <ul>
+    <li style="list-style: none;">(i)  is listed in <b>ANZSCO</b><sup>1</sup>; and</li><br>
+    <li style="list-style: none;">(ii) is the <b>same occupation</b> in relation to which the identified person’s most recently held Subclass 457 (Temporary Work (Skilled)) visa, Subclass 482 (Temporary Skill Shortage) visa or Subclass 482 (Skills in Demand) visa was granted<sup>2</sup>.</li>
+  </ul>
+  <p><sup>1</sup> <i><a class="uline" href="https://www.legislation.gov.au/F2024L01616/latest/text" target="_blank">ANZSCO</a> as in force on 23 November 2022 (v2022).</i><br>
+  <sup>2</sup> <i><a class="uline" href="https://www.legislation.gov.au/F1996B03551/latest/text" target="_blank">Migration Regulations 1994 (Cth)</a> reg 5.19(5)(b).</i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-trt187" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Subclass 187 Regional Skilled Migration Scheme (RSMS)* - TRT stream</h4>
+  <p style="margin-top:10px;">The RSMS Temporary Residence Transition (TRT) stream provides access to permanent residence for eligible visa holders.</p>
+  <p>To be eligible under the RSMS TRT stream, an applicant must have an occupation which:</p>
+  <ul style="list-style-type: none;">
+    <li style="list-style: none;">(i) is listed in <b>ANZSCO</b><sup>1</sup>; and</li><br>
+    <li style="list-style: none;">(ii) has the same <b>4‑digit ANZSCO</b> occupation unit group code as the occupation in relation to which the identified person’s most recently held Subclass 457 (Temporary Work (Skilled)) visa or Subclass 482 (Temporary Skill Shortage) visa was granted<sup>2</sup>.</li>
+  </ul>
+  <p>* Subclass 187 visa is <b>closed to new applications</b> except for certain transitional cases.</p>
+  <p>
+    <sup>1</sup> <i><a class="uline" href="https://www.legislation.gov.au/F2024L01616/latest/text" target="_blank">ANZSCO</a> as in force on 27 June 2013 (v1.2).</i><br>
+    <sup>2</sup> <i><a class="uline" href="https://www.legislation.gov.au/F1996B03551/latest/text" target="_blank">Migration Regulations 1994 (Cth)</a> reg 5.19(5A)(b).</i>
+  </p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-trt482" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Subclass 482 Skills in Demand (SID) - Specialist Skills stream</h4>
+  <p style="margin-top:10px;">The SID Specialist Skills stream provides access to temporary residence for eligible individuals.</p>
+  <p>To be eligible under the SID Specialist Skills stream<sup>1</sup>:</p>
+  <ul style="list-style-type: none;">
+    <li style="list-style: none;">(i)  the occupation and its corresponding 6‑digit code correspond to an occupation and its corresponding 6‑digit code that is specified in <b>Major Group 1, 2, 4, 5</b> or <b>6</b> in ANZSCO<sup>2</sup>.</li>
+  </ul>
+  <p>
+    <sup>1</sup> <i><a class="uline" href="https://www.legislation.gov.au/F1996B03551/latest/text" target="_blank"> Migration Regulations 1994 (Cth)</a> reg 2.72(8)(a)(i).</i><br>
+    <sup>2</sup> <i><a class="uline" href="https://www.legislation.gov.au/F2024L01616/latest/text" target="_blank">ANZSCO</a> as in force on 23 November 2022 (v2022)</i>
+  </p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-v12" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Why does ANZSCO Version 1.2 matter?</h4>
+  <p style="margin-top:10px;">Anzscosearch utilises ANZSCO catalogues Version 1.3 (<b>v1.3</b>), released in 2019, and Version 2022 (<b>v2022</b>).</p>
+  <p>For migration purposes, the Department of Home Affairs references:</p>
+  <ul>
+    <li>ANZSCO <b>v1.2</b> for Subclass 189, 190, 491, 485, 494, 407, and 187 visas.</li>
+    <li>ANZSCO <b>v2022</b> for Subclass 482 (Core & Specialist streams) and 186 (TRT & DE).</li>
+    <li>A mix of both versions, along with non-ANZSCO occupations (coded as 070499), under the Labour Agreement stream for Subclass 482, 186, and 494.</li>
+  </ul>
+  <p>In November 2019, the Australian Bureau of Statistics (ABS) released ANZSCO Version 1.3 (v1.3), which updated indicative skill levels for certain occupations. However, this update was minimal and did not introduce any new categories, remove or restructure existing ones. Despite its limited scope, v1.3 replaced v1.2 as the most current version until ANZSCO v2022 was released. The ABS ceased maintaining v1.2 following this update.</p>
+  <p>Anzscosearch adopted v1.3 to ensure its catalogue reflected the latest ABS release prior to v2022.</p>
+  <p>Learn more <a class="uline" target="_blank" href="https://www.abs.gov.au/ausstats/abs@.nsf/Latestproducts/1220.0Main%20Features12013,%20Version%201.3?opendocument&tabname=Summary&prodno=1220.0&issue=2013,%20Version%201.3&num=&view=">here</a>.</p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dual-cat" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Dual ANZSCO Code</h4>
+  <p style="margin-top:10px;">This occupation has <b>changed its ANZSCO code or name</b> between <b>ANZSCO catalogue v1.2</b> and <b>v2022</b>. Ensure you select the correct occupation to assess eligibility:</p>
+  <table id="dual" style="margin-top:10px; border-collapse: collapse; margin-bottom:20px; width: 95%; border: 1px solid #000;">
+    <tr style="background-color:#e6e6e6"><td width="65%">Occupation</td><td>ANZSCO Catalogue</td></tr>
+    <tr><td><span id="code1"></span></td><td><span id="type1"></span></td></tr>
+    <tr><td><span id="code2"></span></td><td><span id="type2"></span></td></tr>
+  </table>
+  <ul style="margin-left:15px">
+    <li>ANZSCO v1.2 is relevant to Subclass 189, 190, 491, 485, 494, 407, and 187 visas.</li>
+    <li>ANZSCO v2022 is relevant to Subclass 482 (Core & Specialist streams) and 186 (TRT & DE).</li><br>
+    <li><i style='color:#FF6633;font-size:18px;padding-right:5px;' class='fa fa fa-warning'></i><b>Be aware</b>: In December 2024, <a class="uline" href="https://www.legislation.gov.au/F2024L01675/asmade/text" target="_blank">LIN 24/083</a> updated the titles of five MLTSSL occupations in LIN 19/051 to the <b>ANZSCO 2022 version</b>. The affected occupations are 322211, 332211, 333211, 333212 and 334113.</li>
+  </ul>
+  <p style="margin-bottom:0px;font-size: 17px; font-weight: bold;">Read our articles for help interpreting the search results on this page:</p>
+  <ul>
+    <li><a class="uline" target="_blank" href="https://www.anzscosearch.com/navigating-dual-anzsco-catalogues-on-anzscosearch/">Navigating Dual ANZSCO Catalogues On Anzscosearch</a></li>
+    <li><a class="uline" target="_blank" href="https://www.anzscosearch.com/anzsco-mismatch-department-instruments-conflict/">ANZSCO Mismatch: Department Instruments Conflict</a></li>
+  </ul>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div style='line-height:25px;' id="messageDialog" class="modal-popup mfp-hide" style="line-height: initial;">
+  <div style="padding:10px 0; display: flex; align-items: center;">
+    <p style="padding-bottom:0;padding-right: 15px;"><i style="color:#FF6633; font-size: 30px;" class="fa fa-warning"></i></p>
+    <p style="padding-bottom:0;padding-right: 15px;">
+      <span style="display:inline-block;vertical-align:middle;" id="printMessageDialog"></span>
+    </p>
+  </div>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-tier" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:10px;">Minimum Points – Latest Invitation Rounds (Subclass 189)</h4>
+  <div style="padding: 0px 0px 20px 0px;"><span class="badge-sq" id="tier-anzsco" style="border:1px solid black;"></span><span style="margin-left:10px;" class="badge-sq tier-2" id="tier-num"></span></div>
+  <div style="margin-bottom:20px" class="tier-history"></div>
+
+  <h4 style="color:#19176E;padding-bottom:10px;">SkillSelect 4-Tier Prioritisation Model</h4>
+  <p>The Tier system groups occupations into priority levels based on workforce demand and economic value. It influences how many invitations an occupation is likely to receive in each invitation round.</p>
+
+  <div class="tier-grid">
+    <div class="tier-label tier-1">Tier 1 – Highest value occupations (4.0%)</div>
+    <div class="tier-desc">Highest invitation volume.</div>
+
+    <div class="tier-label tier-2">Tier 2 – High priority occupations (2.0%)</div>
+    <div class="tier-desc">Strong invitation volume.</div>
+
+    <div class="tier-label tier-3">Tier 3 – Diverse occupations (1.0%)</div>
+    <div class="tier-desc">Moderate invitation volume.</div>
+
+    <div class="tier-label tier-4">Tier 4 – Oversupplied occupations (0.5%)</div>
+    <div class="tier-desc">Low invitation volume.</div>
+  </div>
+  <p style="margin-top:24px;">Invitations are still issued <b>based on points rankings</b> within each occupation, but occupation ceilings and invitation volumes are calibrated across all skilled programs.</p>
+  <div>
+    <b>Source</b>:
+    <ul style="padding-top:10px;margin-bottom:0;">
+      <li style="margin-bottom:10px"><a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect/invitation-rounds">Department of Home Affairs, Invitation rounds outcomes</a> <i class="icon-tiny fa fa-external-link"></i></li>
+      <li><a id="tier-url" style="color:#19176E; text-decoration: underline;" target="_blank" href="#">Department of Home Affairs, Reform of SkillSelect Invitation Rounds, internal minute released under FOI FA 25/10/00198 (21 May 2025)</a> <i class="icon-tiny fa fa-external-link"></i></li>
+    </ul>
+  </div>
+
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+{"id":5,"date":"2025-11-02T10:08:28","date_gmt":"2025-11-02T00:08:28","guid":{"rendered":"http:\/\/localhost\/anzsco\/?page_id=5"},"modified":"2025-11-06T08:35:36","modified_gmt":"2025-11-05T22:35:36","slug":"search","status":"publish","type":"page","link":"https:\/\/www.anzscosearch.com\/search\/","title":{"rendered":"Search by ANZSCO"},"content":{"rendered":"[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; overflow=&#8221;visible&#8221; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; bottom_margin=&#8221;5%&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; el_class=&#8221;pad&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;5\/6&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221;][vc_row_inner column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; right_padding_desktop=&#8221;3%&#8221; text_align=&#8221;left&#8221; row_position=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; pointer_events=&#8221;all&#8221;][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; centered_text=&#8221;true&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/5&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; column_padding_type=&#8221;default&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_hidden-xs&#8221;][nectar_icon icon_family=&#8221;iconsmind&#8221; icon_style=&#8221;soft-bg&#8221; icon_color_type=&#8221;color_scheme&#8221; icon_color=&#8221;Extra-Color-1&#8243; open_new_tab=&#8221;true&#8221; icon_padding=&#8221;10px&#8221; pointer_events=&#8221;all&#8221; icon_iconsmind=&#8221;iconsmind-Magnifi-Glass22&#8243; icon_size=&#8221;32&#8243; url=&#8221;https:\/\/www.anzscosearch.com\/multisearch\/&#8221; margin_bottom=&#8221;12&#8243;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<h6 style=\"text-transform: capitalize; line-height: 22px;\"><a style=\"color: #000;\" href=\"https:\/\/www.anzscosearch.com\/multisearch\/\" target=\"_blank\" rel=\"noopener\">Multisearch<\/a><\/h6>\n[\/vc_column_text][\/vc_column_inner][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; centered_text=&#8221;true&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/5&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; column_padding_type=&#8221;default&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_hidden-xs&#8221;][nectar_icon icon_family=&#8221;iconsmind&#8221; icon_style=&#8221;soft-bg&#8221; icon_color_type=&#8221;color_scheme&#8221; icon_color=&#8221;Extra-Color-1&#8243; open_new_tab=&#8221;true&#8221; icon_padding=&#8221;10px&#8221; pointer_events=&#8221;all&#8221; icon_iconsmind=&#8221;iconsmind-Map2&#8243; icon_size=&#8221;32&#8243; url=&#8221;https:\/\/www.anzscosearch.com\/search-by-state-territory\/&#8221; margin_bottom=&#8221;12&#8243;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<h6 style=\"text-transform: capitalize; line-height: 22px;\"><a style=\"color: #000;\" href=\"https:\/\/www.anzscosearch.com\/search-by-state-territory\/\" target=\"_blank\" rel=\"noopener\">State\/Territory<\/a><\/h6>\n[\/vc_column_text][\/vc_column_inner][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; centered_text=&#8221;true&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/5&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; column_padding_type=&#8221;default&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_hidden-xs&#8221;][nectar_icon icon_family=&#8221;iconsmind&#8221; icon_style=&#8221;soft-bg&#8221; icon_color_type=&#8221;color_scheme&#8221; icon_color=&#8221;Extra-Color-1&#8243; open_new_tab=&#8221;true&#8221; icon_padding=&#8221;10px&#8221; pointer_events=&#8221;all&#8221; icon_iconsmind=&#8221;iconsmind-Bulleted-List&#8221; icon_size=&#8221;32&#8243; url=&#8221;https:\/\/www.anzscosearch.com\/search-by-task\/&#8221; margin_bottom=&#8221;12&#8243;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<h6 style=\"text-transform: capitalize; line-height: 22px;\"><a style=\"color: #000;\" href=\"https:\/\/www.anzscosearch.com\/search-by-task\/\" target=\"_blank\" rel=\"noopener\">Search by Task<\/a><\/h6>\n[\/vc_column_text][\/vc_column_inner][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; centered_text=&#8221;true&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/5&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; column_padding_type=&#8221;default&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_hidden-xs&#8221;][nectar_icon icon_family=&#8221;iconsmind&#8221; icon_style=&#8221;soft-bg&#8221; icon_color_type=&#8221;color_scheme&#8221; icon_color=&#8221;Extra-Color-1&#8243; open_new_tab=&#8221;true&#8221; icon_padding=&#8221;10px&#8221; pointer_events=&#8221;all&#8221; icon_iconsmind=&#8221;iconsmind-Dollar-Sign&#8221; icon_size=&#8221;32&#8243; url=&#8221;https:\/\/www.anzscosearch.com\/visa-fees\/&#8221; margin_bottom=&#8221;12&#8243;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<h6 style=\"text-transform: capitalize; line-height: 22px;\"><a style=\"color: #000;\" href=\"https:\/\/www.anzscosearch.com\/visa-fees\/\" target=\"_blank\" rel=\"noopener\">VAC Search<\/a><\/h6>\n[\/vc_column_text][\/vc_column_inner][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; centered_text=&#8221;true&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/5&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221; column_padding_type=&#8221;default&#8221; offset=&#8221;vc_hidden-xs&#8221;][nectar_icon icon_family=&#8221;iconsmind&#8221; icon_style=&#8221;soft-bg&#8221; icon_color_type=&#8221;color_scheme&#8221; icon_color=&#8221;Extra-Color-1&#8243; open_new_tab=&#8221;true&#8221; icon_padding=&#8221;10px&#8221; pointer_events=&#8221;all&#8221; icon_iconsmind=&#8221;iconsmind-Tractor&#8221; icon_size=&#8221;32&#8243; url=&#8221;https:\/\/www.anzscosearch.com\/dama-all\/&#8221; margin_bottom=&#8221;12&#8243;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;]\n<h6 style=\"text-transform: capitalize; line-height: 22px;\"><a style=\"color: #000;\" href=\"https:\/\/www.anzscosearch.com\/dama-all\/\" target=\"_blank\" rel=\"noopener\">DAMA<\/a><\/h6>\n[\/vc_column_text][\/vc_column_inner][\/vc_row_inner][vc_raw_html]JTNDZGl2JTIwaWQlM0QlMjJhbmNob3IlMjIlM0UlM0MlMkZkaXYlM0U=[\/vc_raw_html][vc_row_inner column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; right_padding_desktop=&#8221;3%&#8221; text_align=&#8221;left&#8221; row_position=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; pointer_events=&#8221;all&#8221;][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/1&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221;][divider line_type=&#8221;No Line&#8221; custom_height=&#8221;10&#8243;][vc_column_text][\/vc_column_text][\/vc_column_inner][\/vc_row_inner][\/vc_column][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/6&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_col-xs-12&#8243;][vc_widget_sidebar enable_sticky=&#8221;true&#8221; sidebar_id=&#8221;page-sidebar&#8221;][\/vc_column][\/vc_row]\n","protected":false},"excerpt":{"rendered":"<p>[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; overflow=&#8221;visible&#8221; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; bottom_margin=&#8221;5%&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221;&#8230;<\/p>\n","protected":false},"author":1,"featured_media":97224,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"_acf_changed":false,"footnotes":""},"class_list":["post-5","page","type-page","status-publish","has-post-thumbnail"],"acf":[],"_links":{"self":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/5","targetHints":{"allow":["GET"]}}],"collection":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/users\/1"}],"replies":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/comments?post=5"}],"version-history":[{"count":5,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/5\/revisions"}],"predecessor-version":[{"id":116532,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/5\/revisions\/116532"}],"wp:featuredmedia":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/media\/97224"}],"wp:attachment":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/media?parent=5"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}

@@ -1,0 +1,104 @@
+function checkreturn(e){
+	if (e.keyCode == 13){
+		document.getElementById('search').click();
+		return false;
+	}
+}
+
+function checkreturn_2(e){
+	if (e.keyCode == 13){
+		document.getElementById('search_key').click();
+		return false;
+	}
+}
+
+jQuery('#majorGroup').change(function(event){
+	var majorGroupId = jQuery('#majorGroup').val();
+	jQuery('#subMajorGroup').empty();
+	jQuery('#minorGroup').empty();
+	jQuery('#unitGroup').empty();
+	if (majorGroupId==0){
+		return;
+	}
+	jQuery.ajax({
+		type: 'POST',
+		url: anzscoajax.ajaxurl,
+		dataType: "json",
+		beforeSend: before_1,
+		complete: complete_1,
+		data: ({action : 'get_submajor_group', 'id': majorGroupId}),
+		success: function(response) {
+			var option = jQuery('<option />');
+			option.attr('value', 0).text('[Select one]');
+			jQuery('#subMajorGroup').append(option);
+			jQuery(response.myData).each(function(){
+				option = jQuery('<option />');
+				option.attr('value', this.id).text(this.id + ' - ' + this.description);
+				jQuery('#subMajorGroup').append(option);
+			});
+		}
+	});
+});
+
+jQuery('#subMajorGroup').change(function(event){
+	var subMajorGroupId = jQuery('#subMajorGroup').val();
+	jQuery('#minorGroup').empty();
+	jQuery('#unitGroup').empty();
+	if (subMajorGroupId==0){
+		return;
+	}
+	jQuery.ajax({
+		type: 'POST',
+		url: anzscoajax.ajaxurl,
+		dataType: "json",
+		beforeSend: before_1,
+		complete: complete_1,
+		data: ({action : 'get_minor_group', 'id': subMajorGroupId}),
+		success: function(response) {
+			var option = jQuery('<option />');
+			option.attr('value', 0).text('[Select one]');
+			jQuery('#minorGroup').append(option);
+			jQuery(response.myData).each(function(){
+				var option = jQuery('<option />');
+				option.attr('value', this.id).text(this.id + ' - ' + this.description);
+				jQuery('#minorGroup').append(option);
+			});
+		}
+	});
+});
+
+jQuery('#minorGroup').change(function(event){
+	var minorGroupId = jQuery('#minorGroup').val();
+	jQuery('#unitGroup').empty();
+	if (minorGroupId==0){
+		return;
+	}
+	jQuery.ajax({
+		type: 'POST',
+		url: anzscoajax.ajaxurl,
+		dataType: "json",
+		beforeSend: before_1,
+		complete: complete_1,
+		data: ({action : 'get_unit_group', 'id': minorGroupId}),
+		success: function(response) {
+			var option = jQuery('<option />');
+			option.attr('value', 0).text('[Select one]');
+			jQuery('#unitGroup').append(option);
+			jQuery(response.myData).each(function(){
+				var option = jQuery('<option />');
+				option.attr('value', this.id).text(this.id + ' - ' + this.description);
+				jQuery('#unitGroup').append(option);
+			});
+		}
+	});
+});
+
+function before_1(){
+	jQuery('#search_group').attr('disabled', 'disabled');
+	jQuery('#spin').toggleClass('fa-search fa-circle-notch fa-spin');
+}
+
+function complete_1(){
+	jQuery('#search_group').removeAttr('disabled');
+	jQuery('#spin').toggleClass('fa-circle-notch fa-spin fa-search');
+}

@@ -1,0 +1,191 @@
+const caveatList482 = [
+  `(a) the position has nominated annual earnings of less than AUD180,001; and<br>
+(b) if the nominee is to be transferred to fill the position—the transfer is not an intra-corporate transfer to which an international trade obligation applies.`,
+  "The position is a clerical, bookkeeper or accounting clerk position.",
+  "The position is involved in mass production in a factory setting.",
+  "The position is in a limited service restaurant.",
+  `The position predominantly involves responsibility for low-skilled tasks.<br>
+Example 1: Fruit picking or packing or feeding of livestock or animals.<br>
+Example 2: Truck driving.`,
+  `The position:<br>
+(a) is based in a front-line retail setting; or<br>
+(b) predominantly involves direct client transactional interaction on a regular basis; or<br>
+(c) predominantly involves selling educational courses to individual students; or<br>
+(d) is based in a call centre and does not require a significant technical knowledge of products.`,
+  `The position:<br>
+(a) is not a full-time position; or<br>
+(b) is not based in a therapeutic setting; or<br>
+(c) involves the provision of non-medical relaxation massage; or<br>
+(d) is in a retail setting.`,
+  `The position:<br>
+(a) is not located in a commercial building or shopping centre environment; or<br>
+(b) predominantly involves managing the provision of only one particular service to a facility or managing one particular relationship.<br>
+Example: Managing the cleaning contract for a facility but not other contracts relevant to the facility.`,
+  "The position relates to retail mobile phone repairs or other small consumer mobile devices including tablets, smart watches, handheld gaming devices, portable media players, etc.",
+  `The position relates to mass or standardised production (as opposed to specialist production), including the following:<br>
+(a) a position based in a franchise or factory;<br>
+(b) a position that:<br>
+  &nbsp;&nbsp;&nbsp;(i) involves full or partial production of food product for distribution to another location; or<br>
+  &nbsp;&nbsp;&nbsp;(ii) predominantly involves the use of pre-prepared food product from another location.`,
+  "The position is in a business that has an annual turnover of less than AUD1,000,000.",
+  `(a) the position is in a business that has an annual turnover of less than AUD1,000,000; and<br>
+(b) if the nominee is to be transferred to fill the position—the transfer is not an intra-corporate transfer to which an international trade obligation applies.<br>
+(c) the position is in a business that has fewer than 5 employees; and<br>
+&nbsp;&nbsp;&nbsp;(i) if the nominee is to be transferred to fill the position—the transfer is not an intra-corporate transfer to which an international trade obligation applies.`,
+  "The position is in a business that has fewer than 5 employees.",
+  "The position is not provided for under an International Trade Obligation.",
+  "The position has nominated annual earnings of less than AUD120,000.",
+  "The position is a brothel keeper."
+];
+
+function showCaveats(caveats, visaType, country, anzsco) {
+  var ref482 = '<a class="uline" href="https://www.legislation.gov.au/F2024L01620/latest/text" target="_blank">Legislative Instrument IMMI 24/089</a>';
+  var ref186 = '<a class="uline" href="https://www.legislation.gov.au/F2024L01618/latest/text" target="_blank">Legislative Instrument IMMI 24/093</a>';
+  var txtTitle = '';
+  var txtCaveats = '';
+  var flagRow = '';
+  var caveatNumbers = caveats.split(',');
+  var caveatList = caveatList482;
+  if (visaType == 186) {
+    caveatList = caveatList482;
+  }
+  if (country == false) {
+    txtTitle = 'Occupation Caveats - Visa Subclass ' + visaType;
+    for (var i = 0; i < caveatNumbers.length; i++) {
+      txtCaveats += '<tr><td><span class="ms-caveat">' + caveatNumbers[i] + '</span></td><td style="font-size:14px;line-height:28px;">' + caveatList[caveatNumbers[i]-1] + '</td></tr>';
+    }
+    txtCaveats = '<table>' + txtCaveats + '</table>';
+    txtCaveats += '<p style="line-height:25px;"> ' + (visaType==482 ? ref482 : ref186) + ' <i class="icon-tiny fa fa-external-link"></i></p>';
+    
+  } else {
+    txtTitle = "Visa Subclass 482";
+    if (caveatNumbers == 'ALL') {
+      txtCaveats = '<p style="line-height:25px;">A <b>skills assessment is required</b> unless an exemption applies.</p>';
+      txtCaveats += '<p style="line-height:25px;">Exempt applicants for an occupation are prescribed by <a class="uline" href="https://www.legislation.gov.au/Details/F2018L00294" target="_blank">Legislative Instrument IMMI 18/039</a> <i class="icon-tiny fa fa-external-link"></i></p>';
+    } else {
+      for (var i = 0; i < caveatNumbers.length; i++) {
+        flagRow += '<td width="33%"><span style="line-height:30px; margin-right:15px;"><span style="font-size: 20px" class="flag-icon flag-icon-' + caveatNumbers[i] + '"></span>&nbsp;  ' + countryCodes[caveatNumbers[i].toUpperCase()] + '</span></td>';
+        if ((i+1) % 3 == 0) {
+          txtCaveats += '<tr style="line-height: 35px;">' + flagRow + '</tr>';
+          flagRow = '';
+        }
+      }
+      if(flagRow !== null && flagRow !== '') {
+        txtCaveats += '<tr style="line-height: 35px;">' + flagRow + '</tr>';
+      }
+      txtCaveats = '<div style="overflow-x:auto;"><table style="font-size:13px; width:100%; padding-left:20px;">' + txtCaveats + '</table></div>';
+      txtCaveats = '<p style="line-height:25px;">Unless an exemption applies, a <b>skills assessment is required</b> for persons who hold a passport issued by the following countries:</p>' + txtCaveats;
+      txtCaveats += '<p style="line-height:25px;">Exempt applicants for an occupation are prescribed by <a class="uline" href="https://www.legislation.gov.au/Details/F2018L00294" target="_blank">Legislative Instrument IMMI 18/039</a> <i class="icon-tiny fa fa-external-link"></i></p>';
+    }
+  }
+
+  jQuery("#showTitle").html(txtTitle);
+  jQuery("#code").html("<span style='border:1px solid black;' class='badge-sq'>" + anzsco + "</span>");
+  jQuery("#showCaveats").html(txtCaveats);
+  jQuery("#dialog-482").click();
+}
+
+function openDialog(id) {
+  jQuery("#" + id).click();
+}
+
+function openDialogDual(id, code1, code2) {
+  jQuery("#" + id).click();
+  jQuery("#code1").html(code1.code + ": " + code1.name);
+  jQuery("#code2").html(code2.code + ": " + code2.name);
+  jQuery("#type1").html(code1.type);
+  jQuery("#type2").html(code2.type);
+}
+
+function openDialogTRA(anzsco, qualifications) {
+  q_table = '<table class="tra" style="border-collapse: collapse; width:100%;">'+
+  '<tr style="border-bottom:1px solid black !important; background-color: #f1f1f1;"><th><b>Accepted Qualification/s name</b></th><th><b>Qualification code</b></th></tr>';
+  for (var i = 0; i < qualifications.length; i++) {
+    q_table += '<tr><td>' + qualifications[i].qualification + '</td><td>' + ((qualifications[i].qualification_code === null || qualifications[i].qualification_code === '') ? '' : qualifications[i].qualification_code) + '</td></tr>';
+  }
+  q_table += '</table>';
+  
+  jQuery("#tra-code").html(anzsco);
+  jQuery("#tra-qualifications").html(q_table);
+  jQuery("#tra").click();
+}
+
+function openDialogLA(anzsco, la, onhire) {
+  q_table = '<table class="tra" style="border-collapse: collapse; width:100%;">';  
+  if (onhire) {
+    q_table += '<tr style="border-bottom:1px solid black !important; background-color: #f1f1f1;"><th style="width:25%;"><b>Type</b></th><th><b>Agreement Template</b></th><th><b>Nearest Equivalent ANZSCO*</b></th></tr>';
+  } else {
+    q_table += '<tr style="border-bottom:1px solid black !important; background-color: #f1f1f1;"><th style="width:45%;"><b>Type</b></th><th><b>Agreement Template</b></th></tr>';
+  }
+  for (var i = 0; i < la.length; i++) {
+    if (onhire) {
+      q_table += '<tr><td><i style="color:teal; font-size:22px; padding-right:15px;" class="fa fa-check-circle"></i>' + la[i].name + '</td><td><a class="uline" target="_blank" href="' + la[i].url + '">PDF</a> <i class="icon-tiny fa fa-external-link"></i></td><td>' + (la[i].comments==null ? '' : la[i].comments) +'</td></tr>';
+    } else {
+      q_table += '<tr><td><i style="color:teal; font-size:22px; padding-right:15px;" class="fa fa-check-circle"></i>' + la[i].name + '</td><td><a class="uline" target="_blank" href="' + la[i].url + '">PDF</a> <i class="icon-tiny fa fa-external-link"></i></td></tr>';
+    }
+  }
+  q_table += '</table>';
+  if (onhire) {
+    q_table += '<p style="font-size:13px;padding-top:15px;">* When the occupation does not exist in the ANZSCO catalogue v1.3, this is the closest equivalent occupation.</p>';
+  }
+
+  jQuery("#la-code").html(anzsco);
+  jQuery("#la-results").html(q_table);
+  jQuery("#la").click();
+}
+
+function openDialogTier(id, data) {
+  jQuery("#" + id).click();
+  jQuery("#tier-anzsco").html(data.anzsco);
+  jQuery("#tier-url").attr("href", data.url);
+
+  const $tier = jQuery("#tier-num");
+  // Remove any existing tier-* class
+  $tier.removeClass(function (index, className) {
+    return (className.match(/tier-\d+/g) || []).join(' ');
+  });
+  // Apply new tier class
+  if (data.tier) {
+    $tier.addClass("tier-" + data.tier);
+    $tier.text('Tier ' + data.tier);
+  }
+
+  let tableHtml = `
+    <table class="invitation-table">
+      <thead>
+        <tr>
+          <th>Invitation Round</th>
+          <th>Minimum Points Required</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
+
+  data.rounds.forEach(r => {
+    const label = r.latest ? `${formatDateAU(r.month)}` : formatDateAU(r.month);
+    tableHtml += `
+      <tr class="${r.latest ? 'latest-round' : ''}">
+        <td>${label}</td>
+        <td>${r.points}</td>
+      </tr>
+    `;
+  });
+
+  tableHtml += `
+      </tbody>
+    </table>
+  `;
+
+  jQuery(".tier-history").html(tableHtml);
+}
+
+function formatDateAU(dateStr) {
+  const [d, m, y] = dateStr.split('/');
+  const date = new Date(y, m - 1, d);
+
+  return date.toLocaleDateString('en-AU', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  });
+}

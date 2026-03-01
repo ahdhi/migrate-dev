@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ausmap {
+ width: 258px;
+ height: 233px;
+ margin:0 auto;
+ background: url(../images/ausmap2.png) no-repeat;
+ position: relative; 
+}
+#ausmap li {margin: 0; padding: 0; list-style: none; display: block; position: absolute;}
+#ausmap a {display: block; text-decoration: none; font-size:11px; font-weight:bold; line-height:normal;}
+  
+#wa { left: 0px; top: 21px; width: 101px; z-index:10; }
+#wa a {height: 72px; text-align:center; padding-top:80px; padding-left:15px; color:#fff;}
+#wa a:hover {background: url(../images/ausmap2.png) 0 -254px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#nt { left: 102px; top: 2px; width: 56px; z-index:10; }
+#nt a {height: 46px; text-align:center; padding-top:60px; padding-left:0px; color:#fff;}
+#nt a:hover {background: url(../images/ausmap2.png) -102px -235px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#sa { left: 102px; top: 108px; width: 75px; z-index:10; }
+#sa a {height: 70px; text-align:center; padding-top:15px; padding-left:0px; color:#fff;}
+#sa a:hover {background: url(../images/ausmap2.png) -102px -341px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#tas { left: 200px; top: 212px; width: 25px; z-index:10; }
+#tas a {height: 19px; text-align:center; padding-top:2px; padding-left:0px; color:#fff; letter-spacing:-1px;}
+#tas a:hover {background: url(../images/ausmap2.png) -200px -445px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#qld { left: 159px; top: 0; width: 99px; z-index:9; }
+#qld a {height: 49px; text-align:center; padding-top:80px; padding-right:20px; color:#fff;}
+#qld a:hover {background: url(../images/ausmap2.png) -159px -466px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#nsw { left: 178px; top: 123px; width: 80px; z-index:10; }
+#nsw a {height: 46px; text-align:center; padding-top:20px; padding-right:20px; color:#fff;}
+#nsw a:hover {background: url(../images/ausmap2.png) -178px -356px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#vic { left: 178px; top: 166px; width: 57px; z-index:11;}
+#vic a {height: 23px; text-align:center; padding-top:13px; padding-right:25px; color:#fff;}
+#vic a:hover {background: url(../images/ausmap2.png) -178px -632px no-repeat; text-decoration:none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+
+#act { left: 224px; top: 167px; width: 40px; z-index:12; -moz-box-sizing: content-box;}
+#act a {height: 22px; text-align:right; padding-top:0px; padding-right:0px; color:#68A4D4;}
+#act a:hover {background: url(../images/actdot.png) 0 0 no-repeat; text-decoration:none; color:#322e2b;}
+

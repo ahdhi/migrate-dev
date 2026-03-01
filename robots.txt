@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-content/plugis/s2member-files/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-content/uploads/
+
+Sitemap: https://www.anzscosearch.com/sitemap_index.xml

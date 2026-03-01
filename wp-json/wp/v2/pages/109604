@@ -1,0 +1,144 @@
+<style id="dynamic-css-inline-css" type="text/css">
+  .iconsmind-Tractor:before{content:"\e9e0"}
+</style>
+
+<link rel='stylesheet' id='iconsmind-core-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/iconsmind-core.css' type='text/css' media='all' />
+<link rel='stylesheet' id='nectar-element-icon-with-text-css' href='https://www.anzscosearch.com/wp-content/themes/salient/css/build/elements/element-icon-with-text.css' type='text/css' media='all' />
+
+      <div style="padding:20px 0 30px 0;" class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column boxed no-extra-padding inherit_tablet inherit_phone " data-shadow="small_depth" data-border-radius="3px" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
+        <div class="vc_column-inner">
+            <div class="column-bg-overlay-wrap" data-bg-animation="none">
+              <div class="column-bg-overlay"></div>
+            </div>
+            <div class="wpb_wrapper">
+              <div class="iwithtext">
+                  <div class="iwt-icon"> <i class="icon-default-style fa fa-exclamation-triangle accent-color"></i> </div>
+                  <div class="iwt-text">
+                    You need a payment subscription to access this content.
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div><div style='text-align:center'><a style='text-align:center;'><a class="nectar-button n-sc-button small see-through"  href="https://www.anzscosearch.com/pricing/" data-color-override="#19176E" data-hover-color-override="false" data-hover-text-color-override="#fff"><span>Register</span></a></a><a style='padding-left:10px; text-align:center;'><a class="nectar-button n-sc-button small see-through"  href="https://www.anzscosearch.com/contact/" data-color-override="#19176E" data-hover-color-override="false" data-hover-text-color-override="#fff"><span>Need Immigration Assistance?</span></a></a></div>
+<a href="#" data-mfp-src="#cavDialog-482" id="dialog-482" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-A" id="groupA" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-B" id="groupB" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-C" id="groupC" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-D" id="groupD" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-E" id="groupE" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#vetGroup-F" id="groupF" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dialog-tra" id="tra" class="open-popup-link"></a>
+<a href="#" data-mfp-src="#dual-cat" id="dual" class="open-popup-link"></a>
+
+<div style='line-height:35px;' id="cavDialog-482" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;font-size:18px;"><span id="showTitle"></span></h4>
+  <div style="padding:5px 0px 15px 0px;"><span id="code"></span></div>
+  <div id="showCaveats"></div>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-A" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">A</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at Australian Bachelor degree or higher degree with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years.</li>
+  </ul>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-B" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">B</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree with a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree with an additional qualification at least Australian Qualifications Framework (AQF) Diploma level in a highly relevant field of study and at least two years of post qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Bachelor degree or higher degree without a highly relevant field of study and at least three years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualification assessed at the AQF bachelor degree level), five years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-C" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">C</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at least AQF Diploma level with a highly relevant field of study and at least one year of postqualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at least AQF Diploma level with an additional qualification at least AQF Certificate IV in a highly relevant field of study and at least one year of post-qualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at least AQF Diploma level without a highly relevant field of study and at least two years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualification assessed at the AQF diploma level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-D" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">D</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Certificate IV with a highly relevant field of study and at least one year of postqualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Certificate IV without a highly relevant field of study and at least two years of postqualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification(s) assessed at AQF Certificate III with a highly relevant field of study and at least three years of postqualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualifications assessed at the AQF Certificate III or Certificate IV level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-E" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">E</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>					
+  <ul class="bullets">
+    <li>Qualification(s) assessed at AQF Diploma level with a highly relevant field of study and at least one year of postqualification highly relevant employment at an appropriate skill level in the last five years.</li>
+  </ul>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="vetGroup-F" class="white-popup mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:15px;">VETASSESS Occupation Group<span class="vetassess-group">F</span></h4>
+  <p><b>Skills Assessment Criteria:</b></p>
+  <ul class="bullets">
+    <li>Qualification/s assessed at least AQF Certificate II with a highly relevant field of study and at least one year of postqualification highly relevant employment at an appropriate skill level in the last five years; OR</li>
+    <li>Qualification/s assessed at Australian Certificate II without a highly relevant field of study and at least two years of post-qualification highly relevant employment at an appropriate skill level in the last five years;</li>
+  </ul>
+  <p><i>Note: For <b>pre-qualification employment</b> (if all of your employment is before your qualifications assessed at the AQF Certificate II level), three years of highly relevant employment in addition to at least one year of highly relevant employment at an appropriate skill level in the last five years.</i></p>
+  <p><a class="uline" target="_blank" href="https://www.vetassess.com.au/skills-assessment-for-migration/skills-assessment-for-professional-occupations">VETASSESS Skills Assessment for Professional Occupations</a> <i class='icon-tiny fa fa-external-link'></i></p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dialog-tra" style='line-height:35px;' class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;padding-bottom:10px;">Trades Recognition Australia (TRA)</h4>
+  <div style="line-height: 25px;">
+    <div><b>Australian Qualification By Occupation</b></div>
+    <div style="padding: 15px 0px 25px 0px;"><span class="badge-sq" id="tra-code" style="border:1px solid black;"></span></div>
+    <span id="tra-qualifications"></span>
+  </div>
+  <p style="padding-top:20px; line-height:25px">
+    <a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://www.tradesrecognitionaustralia.gov.au/programs">Trades Recognition Australia (TRA)</a> <i class='icon-tiny fa fa-external-link'></i><br>
+    <a style="color:#19176E; text-decoration: underline;" target="_blank" href="https://www.tradesrecognitionaustralia.gov.au/document/australian-qualification-occupation">Trades Recognition Australia (TRA) - Australian Qualification By Occupation</a> <i class='icon-tiny fa fa-external-link'></i>
+  </p>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>
+
+<div id="dual-cat" class="white-popup-ms mfp-hide" style="line-height: initial;">
+  <h4 style="color:#19176E;">Dual ANZSCO Code</h4>
+  <p style="margin-top:10px;">This occupation has <b>changed its ANZSCO code or name</b> between <b>ANZSCO catalogue v1.2</b> and <b>v2022</b>. Ensure you select the correct occupation to assess eligibility:</p>
+  <table id="dual" style="margin-top:10px; border-collapse: collapse; margin-bottom:20px; width: 95%; border: 1px solid #000;">
+    <tr style="background-color:#e6e6e6"><td width="65%">Occupation</td><td>ANZSCO Catalogue</td></tr>
+    <tr><td><span id="code1"></span></td><td><span id="type1"></span></td></tr>
+    <tr><td><span id="code2"></span></td><td><span id="type2"></span></td></tr>
+  </table>
+  <ul style="margin-left:15px">
+    <li>ANZSCO v1.2 is relevant to Subclass 189, 190, 491, 485, 494, 407, and 187 visas.</li>
+    <li>ANZSCO v2022 is relevant to Subclass 482 (Core & Specialist streams) and 186 (TRT & DE).</li><br>
+    <li><i style='color:#FF6633;font-size:18px;padding-right:5px;' class='fa fa fa-warning'></i><b>Be aware</b>: In December 2024, <a class="uline" href="https://www.legislation.gov.au/F2024L01675/asmade/text" target="_blank">LIN 24/083</a> updated the titles of five MLTSSL occupations in LIN 19/051 to the <b>ANZSCO 2022 version</b>. The affected occupations are 322211, 332211, 333211, 333212 and 334113.</li>
+  </ul>
+  <p style="margin-bottom:0px;font-size: 17px; font-weight: bold;">Read our articles for help interpreting the search results on this page:</p>
+  <ul>
+    <li><a class="uline" target="_blank" href="https://www.anzscosearch.com/navigating-dual-anzsco-catalogues-on-anzscosearch/">Navigating Dual ANZSCO Catalogues On Anzscosearch</a></li>
+    <li><a class="uline" target="_blank" href="https://www.anzscosearch.com/anzsco-mismatch-department-instruments-conflict/">ANZSCO Mismatch: Department Instruments Conflict</a></li>
+  </ul>
+  <button title="Close (Esc)" type="button" class="mfp-close">×</button>
+</div>{"id":109604,"date":"2024-03-26T18:49:23","date_gmt":"2024-03-26T08:49:23","guid":{"rendered":"https:\/\/www.anzscosearch.com\/?page_id=109604"},"modified":"2024-12-12T16:55:21","modified_gmt":"2024-12-12T06:55:21","slug":"multisearch","status":"publish","type":"page","link":"https:\/\/www.anzscosearch.com\/multisearch\/","title":{"rendered":"Multisearch"},"content":{"rendered":"[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; bottom_padding=&#8221;5%&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; overflow=&#8221;visible&#8221; advanced_gradient_angle=&#8221;0&#8243; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221; gradient_type=&#8221;default&#8221; shape_type=&#8221;&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;5\/6&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221;][vc_row_inner column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; right_padding_desktop=&#8221;1%&#8221; text_align=&#8221;left&#8221; row_position=&#8221;default&#8221; row_position_tablet=&#8221;inherit&#8221; row_position_phone=&#8221;inherit&#8221; overflow=&#8221;visible&#8221; pointer_events=&#8221;all&#8221;][vc_column_inner column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; overflow=&#8221;visible&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/1&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221; column_padding_type=&#8221;default&#8221;][vc_column_text css=&#8221;&#8221; text_direction=&#8221;default&#8221;][\/vc_column_text][\/vc_column_inner][\/vc_row_inner][\/vc_column][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221; column_element_direction_desktop=&#8221;default&#8221; column_element_spacing=&#8221;default&#8221; desktop_text_alignment=&#8221;default&#8221; tablet_text_alignment=&#8221;default&#8221; phone_text_alignment=&#8221;default&#8221; background_color_opacity=&#8221;1&#8243; background_hover_color_opacity=&#8221;1&#8243; column_backdrop_filter=&#8221;none&#8221; column_shadow=&#8221;none&#8221; column_border_radius=&#8221;none&#8221; column_link_target=&#8221;_self&#8221; column_position=&#8221;default&#8221; advanced_gradient_angle=&#8221;0&#8243; gradient_direction=&#8221;left_to_right&#8221; overlay_strength=&#8221;0.3&#8243; width=&#8221;1\/6&#8243; tablet_width_inherit=&#8221;default&#8221; animation_type=&#8221;default&#8221; bg_image_animation=&#8221;none&#8221; border_type=&#8221;simple&#8221; column_border_width=&#8221;none&#8221; column_border_style=&#8221;solid&#8221; gradient_type=&#8221;default&#8221; offset=&#8221;vc_col-xs-12&#8243;][vc_widget_sidebar enable_sticky=&#8221;true&#8221; sidebar_id=&#8221;page-sidebar&#8221;][\/vc_column][\/vc_row]\n","protected":false},"excerpt":{"rendered":"<p>[vc_row type=&#8221;in_container&#8221; full_screen_row_position=&#8221;middle&#8221; column_margin=&#8221;default&#8221; column_direction=&#8221;default&#8221; column_direction_tablet=&#8221;default&#8221; column_direction_phone=&#8221;default&#8221; scene_position=&#8221;center&#8221; bottom_padding=&#8221;5%&#8221; text_color=&#8221;dark&#8221; text_align=&#8221;left&#8221; row_border_radius=&#8221;none&#8221; row_border_radius_applies=&#8221;bg&#8221; overflow=&#8221;visible&#8221; advanced_gradient_angle=&#8221;0&#8243; overlay_strength=&#8221;0.3&#8243; gradient_direction=&#8221;left_to_right&#8221; shape_divider_position=&#8221;bottom&#8221; bg_image_animation=&#8221;none&#8221; gradient_type=&#8221;default&#8221; shape_type=&#8221;&#8221;][vc_column column_padding=&#8221;no-extra-padding&#8221; column_padding_tablet=&#8221;inherit&#8221; column_padding_phone=&#8221;inherit&#8221; column_padding_position=&#8221;all&#8221;&#8230;<\/p>\n","protected":false},"author":1,"featured_media":0,"parent":0,"menu_order":0,"comment_status":"closed","ping_status":"closed","template":"","meta":{"_acf_changed":false,"footnotes":""},"class_list":["post-109604","page","type-page","status-publish"],"acf":[],"_links":{"self":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/109604","targetHints":{"allow":["GET"]}}],"collection":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages"}],"about":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/types\/page"}],"author":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/users\/1"}],"replies":[{"embeddable":true,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/comments?post=109604"}],"version-history":[{"count":5,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/109604\/revisions"}],"predecessor-version":[{"id":113341,"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/pages\/109604\/revisions\/113341"}],"wp:attachment":[{"href":"https:\/\/www.anzscosearch.com\/wp-json\/wp\/v2\/media?parent=109604"}],"curies":[{"name":"wp","href":"https:\/\/api.w.org\/{rel}","templated":true}]}}
